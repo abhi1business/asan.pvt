@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-    <title>Asan Engineering Solutions | Windows, Doors & Fabrication Products</title>
+    <title>Asan Engineering Solutions | Our Services</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="aluminum windows, uPVC doors, fabrication products, road construction materials, engineering products" name="keywords">
-    <meta content="Premium aluminum windows, uPVC doors, fabrication solutions and road construction materials for industrial and residential projects" name="description">
+    <meta content="engineering services, construction solutions, aluminum windows, fabrication services" name="keywords">
+    <meta content="Professional engineering services including aluminum windows, fabrication products and construction solutions" name="description">
 
     <!-- Favicon -->
     <link href="img/favicon.ico" rel="icon">
@@ -30,121 +31,175 @@
     <link href="css/style.css" rel="stylesheet">
     
     <style>
-        :root {
-            --primary: #1a5276;
-            --secondary: #3498db;
-            --light: #f8f9fa;
-            --dark: #2c3e50;
-        }
-        
-        .product-category-tabs {
-            border-bottom: 3px solid var(--primary);
-        }
-        
-        .product-category-tabs .nav-link {
-            font-weight: 600;
-            color: var(--dark);
-            border: none;
-            padding: 15px 25px;
-            border-radius: 0;
-        }
-        
-        .product-category-tabs .nav-link.active {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-        }
-        
-        .product-category-tabs .nav-link:hover:not(.active) {
-            background-color: rgba(26, 82, 118, 0.1);
-        }
-        
-        .product-card {
-            border: 1px solid #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
+        .service-card {
             transition: all 0.3s ease;
+            border: 1px solid #e9ecef;
             height: 100%;
         }
-        
-        .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
         }
-        
-        .product-image {
-            height: 200px;
-            object-fit: cover;
-            width: 100%;
+
+        .service-img-container {
+            overflow: hidden;
         }
-        
-        .product-badge {
+
+        .service-img-container img {
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover .service-img-container img {
+            transform: scale(1.05);
+        }
+
+        .service-overlay {
             position: absolute;
-            top: 10px;
-            right: 10px;
-            background: #e67e22;
-            color: white;
-            padding: 4px 10px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            font-weight: 600;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
         }
-        
-        .spec-table {
-            font-size: 0.85rem;
+
+        .service-card:hover .service-overlay {
+            opacity: 1;
         }
-        
-        .spec-table th {
-            background-color: #f8f9fa;
-            font-weight: 600;
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
         }
-        
-        .tech-specs {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-        }
-        
-        .spec-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
+
+        .service-mini-icon {
+            width: 60px;
+            height: 60px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
         }
-        
-        .system-feature {
-            padding: 15px;
-            border-radius: 8px;
-            background: white;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+
+        .additional-service {
             transition: all 0.3s ease;
+            border: 1px solid #f8f9fa;
         }
-        
-        .system-feature:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+
+        .additional-service:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1) !important;
+            border-color: #e9ecef;
         }
-        
-        .product-overview {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            border-radius: 15px;
+
+        .service-features .badge {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.35em 0.65em;
+        }
+
+        .feature-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e9ecef;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+        }
+
+        /* Alternating Layout Styles */
+        .service-section {
+            padding: 80px 0;
+        }
+
+        .service-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        .service-content {
             padding: 30px;
         }
-        
+
+        .service-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-image img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .service-feature-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .service-feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .service-feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .service-feature-list li i {
+            color: #1a5276;
+            margin-right: 10px;
+        }
+
         @media (max-width: 768px) {
-            .product-category-tabs .nav-link {
-                padding: 10px 15px;
-                font-size: 0.9rem;
+            .service-card {
+                margin-bottom: 1.5rem;
             }
             
-            .product-image {
-                height: 150px;
+            .additional-service {
+                margin-bottom: 1rem;
+            }
+            
+            .service-icon {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .service-icon i {
+                font-size: 1.5rem !important;
+            }
+            
+            .feature-card {
+                margin-bottom: 20px;
+            }
+
+            .service-image img {
+                height: 300px;
+            }
+
+            .service-content {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .service-img-container img {
+                height: 180px !important;
+            }
+            
+            .service-mini-icon {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .service-mini-icon i {
+                font-size: 1.25rem !important;
+            }
+
+            .service-image img {
+                height: 250px;
             }
         }
     </style>
@@ -176,7 +231,7 @@
                     <div class="navbar-nav ms-auto">
                         <a href="index.html" class="nav-item nav-link">Home</a>
                         <a href="about.html" class="nav-item nav-link">About</a>
-                        <a href="service.html" class="nav-item nav-link active">Products</a>
+                        <a href="service.html" class="nav-item nav-link active">Services</a>
                         <a href="project.html" class="nav-item nav-link">Projects</a>
                         <div class="nav-item dropdown">
                             <a href="#!" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Categories</a>
@@ -196,639 +251,393 @@
 
 
     <!-- Hero Start -->
-    <div class="container-fluid pb-5 hero-header bg-light mb-5">
+    <div class="container-fluid pb-5 bg-light hero-header">
         <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <h1 class="display-1 mb-4 animated slideInRight">Premium <span class="text-primary">Engineering Products</span> For Your Projects</h1>
-                    <h5 class="d-inline-block border border-2 border-white py-3 px-5 mb-0 animated slideInRight">
-                        Windows, Doors & Fabrication Solutions</h5>
+            <div class="row g-3 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-1 mb-0 text-dark animated slideInLeft">Our Services</h1>
+                    <p class="text-muted mb-0 animated slideInLeft">Comprehensive Engineering Solutions</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="owl-carousel header-carousel animated fadeIn">
-                        <img class="img-fluid" src="img/awning.webp" alt="Aluminum Windows">
-                        <img class="img-fluid" src="img/Fabrication.webp" alt="Fabrication Products">
-                        <img class="img-fluid" src="img/h3.jpg" alt="Road Construction Materials">
-                    </div>
+                <div class="col-lg-6 animated slideInRight">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a class="text-primary" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-dark active" aria-current="page">Services</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
     </div>
     <!-- Hero End -->
 
-    <!-- Products Section Start -->
+    <!-- Main Services Section -->
     <div class="container-fluid py-5">
-        <div class="container py-5">
-            <div class="text-center wow fadeIn" data-wow-delay="0.1s">
-                <h1 class="mb-5">Our <span class="text-uppercase text-primary bg-light px-2">Product Range</span></h1>
-                <p class="lead mb-5">Explore our comprehensive range of engineering and construction products designed for residential, commercial and industrial applications</p>
+        <div class="container">
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="text-primary mb-3">Our Engineering Services</h1>
+                <p class="lead">Comprehensive engineering consultancy across all disciplines with 35+ years of expertise</p>
             </div>
-            
-            <!-- Product Category Tabs -->
-            <ul class="nav nav-tabs product-category-tabs mb-5 justify-content-center" id="productTabs" role="tablist">
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="windows-tab" data-bs-toggle="tab" data-bs-target="#windows" type="button" role="tab" aria-controls="windows" aria-selected="true">
-                        <i class="fa fa-window-restore me-2"></i>Windows & Doors
-                    </button>
-                </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="fabrication-tab" data-bs-toggle="tab" data-bs-target="#fabrication" type="button" role="tab" aria-controls="fabrication" aria-selected="false">
-                        <i class="fa fa-industry me-2"></i>Fabrication & Road Products
-                    </button>
-                </li>
-            </ul>
-            
-            <!-- Tab Content -->
-            <div class="tab-content" id="productTabsContent">
-                
-                <!-- Windows & Doors Tab -->
-                <div class="tab-pane fade show active" id="windows" role="tabpanel" aria-labelledby="windows-tab">
-                    <div class="row mb-5">
-                        <div class="col-lg-6">
-                            <div class="product-overview h-100">
-                                <h2 class="text-primary mb-4">Aluminum & uPVC Window Systems</h2>
-                                <p class="mb-4">Our premium window and door systems are designed to meet German standards with superior quality, durability and performance. We offer a wide range of solutions for residential and commercial applications.</p>
-                                
-                                <div class="row mb-4">
-                                    <div class="col-md-6">
-                                        <h5><i class="fa fa-check text-primary me-2"></i>German Standards</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>ROHS Compliant</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Quality Certified</h5>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Custom Sizes</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Multi-point Locking</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Weather Proof</h5>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex align-items-center bg-primary text-white p-3 rounded">
-                                    <div class="me-3">
-                                        <i class="fa fa-phone fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-1">Get Technical Consultation</h5>
-                                        <div class="h4 mb-1">+91-7218337339</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="tech-specs h-100">
-                                <h4 class="mb-4">Technical Specifications</h4>
-                                
-                                <div class="d-flex align-items-start mb-4">
-                                    <div class="spec-icon">
-                                        <i class="fa fa-ruler"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Profile Systems</h5>
-                                        <p class="mb-0">29mm, 37mm, 40mm, 50mm sliding and casement systems with various configurations</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex align-items-start mb-4">
-                                    <div class="spec-icon">
-                                        <i class="fa fa-shield-alt"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Material Standards</h5>
-                                        <p class="mb-0">High-quality aluminum profiles with thickness ranging from 1.0mm to 2.7mm</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex align-items-start">
-                                    <div class="spec-icon">
-                                        <i class="fa fa-cogs"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Glass Options</h5>
-                                        <p class="mb-0">Compatible with SGU, DGU, laminated glass from 5mm to 30mm thickness</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Window Systems -->
-                    <h3 class="text-primary mb-4">Window Systems</h3>
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/sl1.jpg" alt="29mm Sliding Window">
-                                    <div class="product-badge">Popular</div>
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">29mm Sliding Window</h5>
-                                    <p class="text-muted small mb-3">Two-track and three-track sliding systems with flying track design</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Max: 2000x3000mm</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/sl2.jpg" alt="37mm Sliding Window">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">37mm Sliding Window</h5>
-                                    <p class="text-muted small mb-3">Sleek design with reinforcement interlock and advanced sealing</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Enhanced Security</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/sl3.jpg" alt="40mm Casement Window">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">40mm Casement Window</h5>
-                                    <p class="text-muted small mb-3">FRAMA system with mullion options for 21mm and 28mm glass</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">In/Out Opening</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/sliding-aluminium-door.jpg" alt="50mm Casement Window">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">50mm Casement Window</h5>
-                                    <p class="text-muted small mb-3">Heavy-duty system for doors and windows with 30mm glass capacity</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Door & Window</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/entry-doors.webp" alt="Monorail Sliding">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Monorail Sliding System</h5>
-                                    <p class="text-muted small mb-3">Space-saving design with smooth sliding operation</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Compact Design</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.6s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/solor.jpg" alt="Solar Profile">
-                                    <div class="product-badge">New</div>
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Solar Profile</h5>
-                                    <p class="text-muted small mb-3">uPVC aluminum track system for solar applications</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Energy Efficient</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Accessories -->
-                    <h3 class="text-primary mb-4">Accessories & Components</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-cog fa-2x text-primary"></i>
-                                </div>
-                                <h5>Handles</h5>
-                                <p class="small mb-0">Ergonomic designs with various finish options</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-lock fa-2x text-primary"></i>
-                                </div>
-                                <h5>Locking Systems</h5>
-                                <p class="small mb-0">Multi-point locking for enhanced security</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-tint fa-2x text-primary"></i>
-                                </div>
-                                <h5>Sealing Systems</h5>
-                                <p class="small mb-0">Weatherproof and soundproof sealing</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-cogs fa-2x text-primary"></i>
-                                </div>
-                                <h5>Rollers & Tracks</h5>
-                                <p class="small mb-0">Smooth operation with durable components</p>
-                            </div>
-                        </div>
+        </div>
+    </div>
+
+    <!-- Civil Engineering Service -->
+    <div class="container-fluid service-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-image">
+                        <img class="img-fluid" src="img/civil-engineering.webp" alt="Civil Engineering Services">
                     </div>
                 </div>
-                
-                <!-- Fabrication & Road Products Tab -->
-                <div class="tab-pane fade" id="fabrication" role="tabpanel" aria-labelledby="fabrication-tab">
-                    <div class="row mb-5">
-                        <div class="col-lg-6">
-                            <div class="product-overview h-100">
-                                <h2 class="text-primary mb-4">Fabrication & Road Construction Products</h2>
-                                <p class="mb-4">Our fabrication division specializes in custom metal fabrication and road construction materials. We provide high-quality solutions for industrial, commercial and infrastructure projects.</p>
-                                
-                                <div class="row mb-4">
-                                    <div class="col-md-6">
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Custom Fabrication</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Structural Steel</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Precision Engineering</h5>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Road Safety Products</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Durable Materials</h5>
-                                        <h5><i class="fa fa-check text-primary me-2"></i>Project Support</h5>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex align-items-center bg-primary text-white p-3 rounded">
-                                    <div class="me-3">
-                                        <i class="fa fa-phone fa-2x"></i>
-                                    </div>
-                                    <div>
-                                        <h5 class="mb-1">Get Project Quote</h5>
-                                        <div class="h4 mb-1">+91-7218337339</div>
-                                    </div>
-                                </div>
-                            </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-content">
+                        <div class="service-icon bg-primary rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fa fa-building text-white fa-2x"></i>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="tech-specs h-100">
-                                <h4 class="mb-4">Technical Capabilities</h4>
-                                
-                                <div class="d-flex align-items-start mb-4">
-                                    <div class="spec-icon">
-                                        <i class="fa fa-industry"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Metal Fabrication</h5>
-                                        <p class="mb-0">Custom fabrication of structural steel, frames, and industrial components</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex align-items-start mb-4">
-                                    <div class="spec-icon">
-                                        <i class="fa fa-road"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Road Construction</h5>
-                                        <p class="mb-0">Road safety products, barriers, and construction materials</p>
-                                    </div>
-                                </div>
-                                
-                                <div class="d-flex align-items-start">
-                                    <div class="spec-icon">
-                                        <i class="fa fa-tools"></i>
-                                    </div>
-                                    <div>
-                                        <h5>Engineering Support</h5>
-                                        <p class="mb-0">Technical consultation and project management services</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Fabrication Products -->
-                    <h3 class="text-primary mb-4">Fabrication Products</h3>
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.1s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/fb1.webp" alt="Structural Steel">
-                                    <div class="product-badge">Best Seller</div>
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Structural Steel</h5>
-                                    <p class="text-muted small mb-3">Beams, columns, channels and custom structural elements</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">IS 2062 Certified</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <h2 class="mb-4">Civil Engineering</h2>
+                        <p class="mb-4">Comprehensive civil engineering services including structural design, construction management, and infrastructure development. Our team delivers innovative solutions for residential, commercial, and industrial projects.</p>
+                        
+                        <div class="service-features mb-4">
+                            <h5 class="mb-3">Key Features:</h5>
+                            <ul class="service-feature-list">
+                                <li><i class="fa fa-check text-primary"></i>Structural Design & Analysis</li>
+                                <li><i class="fa fa-check text-primary"></i>Construction Management</li>
+                                <li><i class="fa fa-check text-primary"></i>Infrastructure Development</li>
+                                <li><i class="fa fa-check text-primary"></i>Site Planning & Surveying</li>
+                                <li><i class="fa fa-check text-primary"></i>Quality Control & Assurance</li>
+                            </ul>
                         </div>
                         
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.2s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/fb2.webp" alt="Custom Fabrication">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Custom Fabrication</h5>
-                                    <p class="text-muted small mb-3">Project-specific metal fabrication and engineering solutions</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Tailored Solutions</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="service-features mb-4">
+                            <span class="badge bg-light text-primary me-2 mb-2">Structural Design</span>
+                            <span class="badge bg-light text-primary me-2 mb-2">Construction Management</span>
+                            <span class="badge bg-light text-primary me-2 mb-2">Infrastructure</span>
+                            <span class="badge bg-light text-primary me-2 mb-2">Site Planning</span>
                         </div>
                         
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.3s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/fb3.webp" alt="Industrial Components">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Industrial Components</h5>
-                                    <p class="text-muted small mb-3">Valves, pipes, fittings and specialized industrial parts</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Heavy Duty</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Road Construction Products -->
-                    <h3 class="text-primary mb-4">Road Construction Products</h3>
-                    <div class="row g-4 mb-5">
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.4s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/fb4.webp" alt="Road Barriers">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Road Barriers</h5>
-                                    <p class="text-muted small mb-3">Safety barriers and guard rails for highways and roads</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Safety Certified</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.5s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/fb5.webp" alt="Road Signage">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Road Signage</h5>
-                                    <p class="text-muted small mb-3">Traffic signs, boards and safety indicators</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Reflective</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-4 wow fadeIn" data-wow-delay="0.6s">
-                            <div class="product-card">
-                                <div class="position-relative">
-                                    <img class="product-image" src="img/fb6.webp" alt="Construction Materials">
-                                </div>
-                                <div class="p-3">
-                                    <h5 class="mb-2">Construction Materials</h5>
-                                    <p class="text-muted small mb-3">Road construction materials and infrastructure products</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="fw-bold text-primary">Durable</span>
-                                        <a href="#!" class="btn btn-sm btn-primary">View Details</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Services -->
-                    <h3 class="text-primary mb-4">Fabrication Services</h3>
-                    <div class="row g-4">
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-drafting-compass fa-2x text-primary"></i>
-                                </div>
-                                <h5>Design & Engineering</h5>
-                                <p class="small mb-0">Custom design solutions for specific project requirements</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-cut fa-2x text-primary"></i>
-                                </div>
-                                <h5>Precision Cutting</h5>
-                                <p class="small mb-0">Laser cutting, plasma cutting and water jet cutting services</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-welding fa-2x text-primary"></i>
-                                </div>
-                                <h5>Welding & Assembly</h5>
-                                <p class="small mb-0">Professional welding and assembly of metal components</p>
-                            </div>
-                        </div>
-                        
-                        <div class="col-md-6 col-lg-3">
-                            <div class="system-feature text-center">
-                                <div class="mb-3">
-                                    <i class="fa fa-paint-roller fa-2x text-primary"></i>
-                                </div>
-                                <h5>Finishing & Coating</h5>
-                                <p class="small mb-0">Powder coating, painting and surface treatment</p>
-                            </div>
-                        </div>
+                        <a href="contact.html" class="btn btn-primary px-4">Get Consultation</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Products Section End -->
 
-    <!-- Technical Specifications Section -->
+    <!-- Electrical Engineering Service -->
+    <div class="container-fluid service-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 order-lg-2 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-image">
+                        <img class="img-fluid" src="img/electrical-engineering.webp" alt="Electrical Engineering Services">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-content">
+                        <div class="service-icon bg-warning rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fa fa-bolt text-white fa-2x"></i>
+                        </div>
+                        <h2 class="mb-4">Electrical Engineering</h2>
+                        <p class="mb-4">Electrical system design, power distribution, lighting design, and electrical safety solutions for all types of projects. We ensure reliable and efficient electrical systems for modern infrastructure.</p>
+                        
+                        <div class="service-features mb-4">
+                            <h5 class="mb-3">Key Features:</h5>
+                            <ul class="service-feature-list">
+                                <li><i class="fa fa-check text-warning"></i>Power System Design</li>
+                                <li><i class="fa fa-check text-warning"></i>Lighting Design & Control</li>
+                                <li><i class="fa fa-check text-warning"></i>Electrical Safety Solutions</li>
+                                <li><i class="fa fa-check text-warning"></i>Energy Management Systems</li>
+                                <li><i class="fa fa-check text-warning"></i>Emergency Power Systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-features mb-4">
+                            <span class="badge bg-light text-warning me-2 mb-2">Power Systems</span>
+                            <span class="badge bg-light text-warning me-2 mb-2">Lighting Design</span>
+                            <span class="badge bg-light text-warning me-2 mb-2">Safety Solutions</span>
+                            <span class="badge bg-light text-warning me-2 mb-2">Energy Management</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-warning px-4">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mechanical Engineering Service -->
+    <div class="container-fluid service-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-image">
+                        <img class="img-fluid" src="img/mechanical-engineering.webp" alt="Mechanical Engineering Services">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-content">
+                        <div class="service-icon bg-success rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fa fa-cogs text-white fa-2x"></i>
+                        </div>
+                        <h2 class="mb-4">Mechanical Engineering</h2>
+                        <p class="mb-4">HVAC systems, plumbing, fire protection, and mechanical equipment design for residential, commercial and industrial projects. We design efficient and sustainable mechanical systems.</p>
+                        
+                        <div class="service-features mb-4">
+                            <h5 class="mb-3">Key Features:</h5>
+                            <ul class="service-feature-list">
+                                <li><i class="fa fa-check text-success"></i>HVAC System Design</li>
+                                <li><i class="fa fa-check text-success"></i>Plumbing & Fire Protection</li>
+                                <li><i class="fa fa-check text-success"></i>Mechanical Equipment Design</li>
+                                <li><i class="fa fa-check text-success"></i>Energy Efficiency Solutions</li>
+                                <li><i class="fa fa-check text-success"></i>Building Automation Systems</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-features mb-4">
+                            <span class="badge bg-light text-success me-2 mb-2">HVAC Systems</span>
+                            <span class="badge bg-light text-success me-2 mb-2">Plumbing</span>
+                            <span class="badge bg-light text-success me-2 mb-2">Fire Protection</span>
+                            <span class="badge bg-light text-success me-2 mb-2">Energy Efficiency</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-success px-4">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Computer Engineering Service -->
+    <div class="container-fluid service-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 order-lg-2 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-image">
+                        <img class="img-fluid" src="img/computer-engineering.webp" alt="Computer Engineering Services">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-content">
+                        <div class="service-icon bg-info rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fa fa-laptop-code text-white fa-2x"></i>
+                        </div>
+                        <h2 class="mb-4">Computer Engineering</h2>
+                        <p class="mb-4">IT infrastructure, network design, software development, and digital solutions for modern engineering applications. We bridge the gap between hardware and software engineering.</p>
+                        
+                        <div class="service-features mb-4">
+                            <h5 class="mb-3">Key Features:</h5>
+                            <ul class="service-feature-list">
+                                <li><i class="fa fa-check text-info"></i>IT Infrastructure Design</li>
+                                <li><i class="fa fa-check text-info"></i>Software Development</li>
+                                <li><i class="fa fa-check text-info"></i>Network Design & Security</li>
+                                <li><i class="fa fa-check text-info"></i>Digital Transformation</li>
+                                <li><i class="fa fa-check text-info"></i>IoT Solutions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-features mb-4">
+                            <span class="badge bg-light text-info me-2 mb-2">IT Infrastructure</span>
+                            <span class="badge bg-light text-info me-2 mb-2">Software Development</span>
+                            <span class="badge bg-light text-info me-2 mb-2">Network Design</span>
+                            <span class="badge bg-light text-info me-2 mb-2">Digital Solutions</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-info px-4">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Energy Engineering Service -->
+    <div class="container-fluid service-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-image">
+                        <img class="img-fluid" src="img/energy-engineering.webp" alt="Energy Engineering Services">
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-content">
+                        <div class="service-icon bg-danger rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fa fa-solar-panel text-white fa-2x"></i>
+                        </div>
+                        <h2 class="mb-4">Energy Engineering</h2>
+                        <p class="mb-4">Renewable energy solutions, energy efficiency consulting, and sustainable power system design for modern infrastructure. We help create energy-efficient and sustainable solutions.</p>
+                        
+                        <div class="service-features mb-4">
+                            <h5 class="mb-3">Key Features:</h5>
+                            <ul class="service-feature-list">
+                                <li><i class="fa fa-check text-danger"></i>Renewable Energy Systems</li>
+                                <li><i class="fa fa-check text-danger"></i>Energy Efficiency Consulting</li>
+                                <li><i class="fa fa-check text-danger"></i>Sustainable Power Design</li>
+                                <li><i class="fa fa-check text-danger"></i>Green Building Solutions</li>
+                                <li><i class="fa fa-check text-danger"></i>Carbon Footprint Analysis</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-features mb-4">
+                            <span class="badge bg-light text-danger me-2 mb-2">Renewable Energy</span>
+                            <span class="badge bg-light text-danger me-2 mb-2">Energy Efficiency</span>
+                            <span class="badge bg-light text-danger me-2 mb-2">Sustainable Design</span>
+                            <span class="badge bg-light text-danger me-2 mb-2">Green Solutions</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-danger px-4">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI & ML Service -->
+    <div class="container-fluid service-section">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 order-lg-2 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="service-image">
+                        <img class="img-fluid" src="img/ai-ml.webp" alt="AI & ML Services">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="service-content">
+                        <div class="service-icon bg-dark rounded-circle d-inline-flex align-items-center justify-content-center mb-4">
+                            <i class="fa fa-brain text-white fa-2x"></i>
+                        </div>
+                        <h2 class="mb-4">Artificial Intelligence</h2>
+                        <p class="mb-4">AI and machine learning solutions for engineering optimization, predictive maintenance, and smart infrastructure development. We leverage cutting-edge AI technologies for engineering excellence.</p>
+                        
+                        <div class="service-features mb-4">
+                            <h5 class="mb-3">Key Features:</h5>
+                            <ul class="service-feature-list">
+                                <li><i class="fa fa-check text-dark"></i>Machine Learning Solutions</li>
+                                <li><i class="fa fa-check text-dark"></i>Predictive Analytics</li>
+                                <li><i class="fa fa-check text-dark"></i>Smart Infrastructure</li>
+                                <li><i class="fa fa-check text-dark"></i>Process Optimization</li>
+                                <li><i class="fa fa-check text-dark"></i>Data-driven Engineering</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="service-features mb-4">
+                            <span class="badge bg-light text-dark me-2 mb-2">Machine Learning</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Predictive Analytics</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Smart Solutions</span>
+                            <span class="badge bg-light text-dark me-2 mb-2">Process Optimization</span>
+                        </div>
+                        
+                        <a href="contact.html" class="btn btn-dark px-4">Get Consultation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Services Grid -->
     <div class="container-fluid py-5 bg-light">
         <div class="container py-5">
-            <div class="text-center wow fadeIn" data-wow-delay="0.1s">
-                <h1 class="mb-5">Technical <span class="text-uppercase text-primary bg-white px-2">Specifications</span></h1>
-                <p class="lead mb-5">Detailed technical specifications for our aluminum window and door systems</p>
+            <div class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">
+                <h3 class="text-primary">Additional Engineering Services</h3>
+                <p class="text-muted">Comprehensive solutions for all your engineering needs</p>
             </div>
             
             <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive">
-                        <table class="table table-bordered table-striped spec-table">
-                            <thead class="bg-primary text-white">
-                                <tr>
-                                    <th>System Type</th>
-                                    <th>Profile Thickness</th>
-                                    <th>Glass Capacity</th>
-                                    <th>Weight/Meter</th>
-                                    <th>Applications</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>29mm Sliding Window</td>
-                                    <td>1.10mm - 1.65mm</td>
-                                    <td>Up to 24mm</td>
-                                    <td>0.427kg - 2.658kg</td>
-                                    <td>Residential, Commercial</td>
-                                </tr>
-                                <tr>
-                                    <td>37mm Sliding Window</td>
-                                    <td>1.40mm - 2.00mm</td>
-                                    <td>Up to 30mm</td>
-                                    <td>0.297kg - 1.518kg</td>
-                                    <td>Residential, High-end</td>
-                                </tr>
-                                <tr>
-                                    <td>40mm Casement Window</td>
-                                    <td>1.20mm - 2.00mm</td>
-                                    <td>21mm - 28mm</td>
-                                    <td>0.159kg - 1.969kg</td>
-                                    <td>Doors, Windows</td>
-                                </tr>
-                                <tr>
-                                    <td>50mm Casement Door</td>
-                                    <td>1.20mm - 1.80mm</td>
-                                    <td>Up to 30mm</td>
-                                    <td>0.243kg - 1.675kg</td>
-                                    <td>Heavy-duty Doors</td>
-                                </tr>
-                                <tr>
-                                    <td>Solar Profile</td>
-                                    <td>0.80mm - 4.00mm</td>
-                                    <td>N/A</td>
-                                    <td>0.180kg - 3.700kg</td>
-                                    <td>Solar Applications</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-primary rounded-circle mx-auto mb-3">
+                            <i class="fa fa-leaf text-white fa-2x"></i>
+                        </div>
+                        <h6>Environmental Engineering</h6>
+                        <small class="text-muted">Environmental impact assessment and sustainable solutions</small>
                     </div>
                 </div>
-            </div>
-            
-            <div class="text-center mt-5">
-                <a href="technical-specs.html" class="btn btn-primary btn-lg px-4">View Complete Technical Specs</a>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-warning rounded-circle mx-auto mb-3">
+                            <i class="fa fa-industry text-white fa-2x"></i>
+                        </div>
+                        <h6>Industrial Engineering</h6>
+                        <small class="text-muted">Process optimization and industrial system design</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-success rounded-circle mx-auto mb-3">
+                            <i class="fa fa-car text-white fa-2x"></i>
+                        </div>
+                        <h6>Automotive Engineering</h6>
+                        <small class="text-muted">Automotive design and vehicle system engineering</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-info rounded-circle mx-auto mb-3">
+                            <i class="fa fa-tractor text-white fa-2x"></i>
+                        </div>
+                        <h6>Agricultural Engineering</h6>
+                        <small class="text-muted">Agricultural machinery and farm infrastructure design</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-danger rounded-circle mx-auto mb-3">
+                            <i class="fa fa-robot text-white fa-2x"></i>
+                        </div>
+                        <h6>Manufacturing Engineering</h6>
+                        <small class="text-muted">Manufacturing process design and automation</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-dark rounded-circle mx-auto mb-3">
+                            <i class="fa fa-drafting-compass text-white fa-2x"></i>
+                        </div>
+                        <h6>Architectural Engineering</h6>
+                        <small class="text-muted">Architectural design and building engineering</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-primary rounded-circle mx-auto mb-3">
+                            <i class="fa fa-cubes text-white fa-2x"></i>
+                        </div>
+                        <h6>Materials Engineering</h6>
+                        <small class="text-muted">Material selection and testing services</small>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                    <div class="additional-service text-center p-4 rounded shadow-sm h-100">
+                        <div class="service-mini-icon bg-warning rounded-circle mx-auto mb-3">
+                            <i class="fa fa-satellite-dish text-white fa-2x"></i>
+                        </div>
+                        <h6>Telecommunications</h6>
+                        <small class="text-muted">Telecom infrastructure and network engineering</small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Inquiry Section -->
+    <!-- CTA Section -->
     <div class="container-fluid py-5">
         <div class="container py-5">
-            <div class="row g-5 align-items-center">
-                <div class="col-lg-6">
-                    <div class="wow fadeIn" data-wow-delay="0.1s">
-                        <h1 class="mb-4">Need Technical <span class="text-uppercase text-primary bg-light px-2">Consultation?</span></h1>
-                        <p class="mb-4">Our engineering team is ready to assist you with product selection, technical specifications, and project requirements.</p>
-                        
-                        <div class="row g-3 mb-4">
-                            <div class="col-sm-6">
-                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Product Selection</h6>
-                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Technical Drawings</h6>
-                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Site Assessment</h6>
-                            </div>
-                            <div class="col-sm-6">
-                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Custom Solutions</h6>
-                                <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Project Management</h6>
-                                <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Installation Support</h6>
-                            </div>
-                        </div>
-                        
-                        <div class="d-flex align-items-center bg-primary text-white p-4 rounded">
-                            <div class="me-4">
-                                <i class="fa fa-phone fa-2x"></i>
-                            </div>
-                            <div>
-                                <h4 class="text-white mb-1">+91-7218337339</h4>
-                                <p class="mb-0">Call for immediate technical support</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="wow fadeIn" data-wow-delay="0.5s">
-                        <div class="bg-light p-4 rounded">
-                            <h4 class="mb-4">Request Product Information</h4>
-                            <form>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" placeholder="Your Name">
-                                            <label for="name">Your Name</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" placeholder="Your Email">
-                                            <label for="email">Your Email</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="subject" placeholder="Subject">
-                                            <label for="subject">Subject</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <select class="form-select" id="product">
-                                                <option selected>Select Product Category</option>
-                                                <option value="1">Windows & Doors</option>
-                                                <option value="2">Fabrication Products</option>
-                                                <option value="3">Road Construction</option>
-                                                <option value="4">Custom Solutions</option>
-                                            </select>
-                                            <label for="product">Product Category</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-floating">
-                                            <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
-                                            <label for="message">Project Requirements</label>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <button class="btn btn-primary w-100 py-3" type="submit">Submit Request</button>
-                                    </div>
-                                </div>
-                            </form>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="bg-primary rounded p-5 text-white">
+                        <h3 class="text-white mb-3">Ready to Start Your Engineering Project?</h3>
+                        <p class="text-white-50 mb-4">Get expert consultation from our team of 100+ qualified engineers</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="contact.html" class="btn btn-light btn-lg px-4">Get Free Consultation</a>
+                            <a href="tel:+919300106147" class="btn btn-outline-light btn-lg px-4">
+                                <i class="fa fa-phone me-2"></i>Call Now
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -845,7 +654,7 @@
                         <a href="index.html" class="d-inline-block mb-3">
                             <h1 class="text-white">ASAN</h1>
                         </a>
-                        <p class="mb-0">Asan Engineering Solutions provides high-quality aluminum windows, uPVC doors, fabrication products and road construction materials with a commitment to innovation, durability, and technical excellence.</p>
+                        <p class="mb-0">Asan Engineering Solutions provides high-quality aluminum windows, fabrication products and construction materials with a commitment to innovation, durability, and technical excellence.</p>
                     </div>
                     <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
                         <h5 class="text-white mb-4">Get In Touch</h5>
@@ -872,17 +681,17 @@
                         <h5 class="text-white mb-4">Quick Links</h5>
                         <a class="btn btn-link d-block text-start mb-2" href="index.html">Home</a>
                         <a class="btn btn-link d-block text-start mb-2" href="about.html">About Us</a>
-                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Products</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Services</a>
                         <a class="btn btn-link d-block text-start mb-2" href="project.html">Projects</a>
                         <a class="btn btn-link d-block text-start mb-2" href="contact.html">Contact Us</a>
                     </div>
                     <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                        <h5 class="text-white mb-4">Our Products</h5>
-                        <a class="btn btn-link d-block text-start mb-2" href="#!">Aluminum Windows</a>
-                        <a class="btn btn-link d-block text-start mb-2" href="#!">uPVC Doors</a>
-                        <a class="btn btn-link d-block text-start mb-2" href="#!">Fabrication Products</a>
-                        <a class="btn btn-link d-block text-start mb-2" href="#!">Road Construction</a>
-                        <a class="btn btn-link d-block text-start mb-2" href="#!">Technical Specs</a>
+                        <h5 class="text-white mb-4">Our Services</h5>
+                        <a class="btn btn-link d-block text-start mb-2" href="#!">Civil Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="#!">Electrical Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="#!">Mechanical Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="#!">Computer Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="#!">AI & ML Solutions</a>
                     </div>
                 </div>
             </div>
@@ -903,10 +712,12 @@
     </div>
     <!-- Footer End -->
 
+
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
         <i class="bi bi-arrow-up"></i>
     </a>
+
 
     <!-- JavaScript Libraries -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
@@ -920,12 +731,8 @@
     <script src="js/main.js"></script>
     
     <script>
-        // Initialize tab functionality
+        // Back to top button functionality
         $(document).ready(function(){
-            // Activate the first tab by default
-            $('#productTabs a:first').tab('show');
-            
-            // Back to top button functionality
             $(window).scroll(function(){
                 if ($(this).scrollTop() > 300) {
                     $('.back-to-top').addClass('show');
