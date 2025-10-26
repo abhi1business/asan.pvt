@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>iSTUDIO - Interior Design Website Template Free</title>
+    <title>ASAN - Engineering Services</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -28,6 +28,144 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Mobile Responsive Fixes */
+        
+        /* General Responsive Adjustments */
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Hero Section Fixes */
+        .hero-header h1.display-1 {
+            font-size: 2.5rem !important;
+        }
+        
+        .breadcrumb {
+            justify-content: center !important;
+        }
+        
+        /* Team Section Fixes */
+        .team-member-card {
+            flex-direction: column !important;
+            text-align: center;
+        }
+        
+        .team-member-card img {
+            width: 100% !important;
+            max-width: 300px;
+            height: auto !important;
+            margin: 0 auto;
+        }
+        
+        .team-member-info {
+            padding: 1.5rem !important;
+        }
+        
+        /* Footer Fixes */
+        .footer .col-md-6 {
+            margin-bottom: 2rem;
+        }
+        
+        .footer .d-flex.pt-3 {
+            justify-content: center;
+        }
+        
+        /* Navbar Fixes */
+        .navbar-brand h1 {
+            font-size: 1.5rem;
+        }
+        
+        .navbar-nav {
+            text-align: center;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+        }
+        
+        /* Responsive Typography */
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h5 {
+            font-size: 1.25rem;
+        }
+        
+        p, span {
+            font-size: 0.9rem;
+        }
+        
+        /* Team Section Specific */
+        .text-uppercase.text-primary.bg-white.px-2 {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        /* Media Queries for Specific Breakpoints */
+        @media (min-width: 768px) {
+            .hero-header h1.display-1 {
+                font-size: 3.5rem !important;
+            }
+            
+            .team-member-card {
+                flex-direction: row !important;
+                text-align: left;
+            }
+            
+            .team-member-card.flex-lg-row-reverse {
+                flex-direction: row-reverse !important;
+            }
+            
+            .team-member-card img {
+                width: 300px !important;
+                height: 300px !important;
+            }
+            
+            .navbar-nav {
+                text-align: right;
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero-header h1.display-1 {
+                font-size: 4rem !important;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-header h1.display-1 {
+                font-size: 2rem !important;
+            }
+            
+            .team-member-info {
+                padding: 1rem !important;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .back-to-top i {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -96,284 +234,166 @@
 
             <div class="row g-5">
                 <!-- Team Members Data -->
-                <!-- Alternate left-right layout -->
-                <script>
-                    const teamMembers = [
-                        {name:"Er. ANIL KHARE", role:"Founder & Managing Director", desc:"M.Tech Structure Engineer with 35+ years experience in project management and strategic planning", img:"img/tt2.png"},
-                        {name:"Er. NIKHIL KHARE", role:"Board of Director", desc:"B.E. (C.S.) with expertise in software testing, application modification, and technical documentation", img:"img/t1.jpg"},
-                        {name:"Er. ANUSHKA KHARE", role:"Word of Director", desc:"B.E. (C.S.) specializing in system requirements analysis and implementing innovative solutions", img:"img/t2.jpg"},
-                        {name:"SANDHYA KHARE", role:"Board of Director, Legal Advisor", desc:"M.A., L.L.B. with 25+ years experience in legal documentation and office management", img:"img/t3.png"},
-                        {name:"E. ASHOK K. KHARE", role:"Electrical Engineer", desc:"B.E. (E.S.) with 25+ years experience in electrical power systems for commercial projects", img:"img/t4.png"},
-                        {name:"Er. MANISH WARWADE", role:"Surveyor", desc:"M.Sc. with 15+ years experience in professional surveying across MP and Chhattisgarh", img:"img/t5.png"},
-                        {name:"VISHWASH MISHRA", role:"General Manager", desc:"Marketing Head with 15+ years experience in management across MP and Chhattisgarh", img:"img/tt3.png"},
-                        {name:"UNNATI GUMASTA", role:"Marketing Manager", desc:"M.B.A. with 5+ years experience in professional management and marketing", img:"img/t7.png"},
-                        {name:"Er. PRAMOD SHRIVASTAVA", role:"Quality Engineer", desc:"B.E. Civil with 22+ years experience in quality engineering and manufacturing processes", img:"img/tt.png"},
-                        {name:"Er. AKHILESH SINHA", role:"Mechanical Engineer", desc:"B.E. Mechanical with 8+ years experience in automated manufacturing equipment design", img:"img/t6.png"},
-                        {name:"RITESH RAMWANI", role:"Structural Engineer", desc:"M.Tech. Structural with 15+ years experience in structural evaluations and design assistance", img:"img/t8.png"},
-                        {name:"MUKESH THAKUR", role:"Civil Engineer", desc:"B.E. Civil with 15+ years experience in project management and infrastructure design", img:"img/tm.png"}
-                    ];
-
-                    teamMembers.forEach((member, index) => {
-                        document.write(`
-                        <div class="col-lg-6 wow fadeIn" data-wow-delay="${0.1+0.1*index}s">
-                            <div class="d-flex align-items-center bg-white rounded shadow overflow-hidden ${index%2!==0?'flex-lg-row-reverse':''}">
-                                <div class="flex-shrink-0">
-                                    <img src="${member.img}" alt="${member.name}" class="img-fluid"
-                                        style="width: 300px; height: 300px; object-fit: cover;"
-                                        onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=${member.name.replace(/ /g,'+')}'">
-                                </div>
-                                <div class="p-4">
-                                    <h5>${member.name}</h5>
-                                    <span class="text-primary">${member.role}</span>
-                                    <p class="text-muted mt-2">${member.desc}</p>
-                                </div>
-                            </div>
-                        </div>
-                        `);
-                    });
-                </script>
+                <div class="col-12">
+                    <div class="row g-4">
+                        <!-- Team members will be inserted here by JavaScript -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!-- Team Section End -->
-<!-- Footer Start -->
-<div class="container-fluid bg-dark text-white-50 footer pt-5">
-    <div class="container-fluid px-0">
-        <div class="container py-5">
-            <div class="row g-5">
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
-                    <a href="index.html" class="d-inline-block mb-3">
-                        <h1 class="text-white">ASAN</h1>
-                        <small class="text-primary">Services Associate India</small>
-                    </a>
-                    <p class="mb-0">India's premier engineering consultancy with 35+ years of experience in delivering comprehensive engineering solutions across various sectors.</p>
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
-                    <h5 class="text-white mb-4">Get In Touch</h5>
-                    <p class="mb-3"><i class="fa fa-map-marker-alt me-3 text-primary"></i>House No. 43, Ganesh Anita Vihar, Jabalpur, MP</p>
-                    <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-9300106147</p>
-                    <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-7987190070</p>
-                    <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanengineering.com</p>
-                    <p class="mb-0"><i class="fa fa-globe me-3 text-primary"></i>www.asanindiaservices.com</p>
-                    <div class="d-flex pt-3">
-                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
-                            <i class="fab fa-facebook-f"></i>
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container-fluid px-0">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                        <a href="index.html" class="d-inline-block mb-3">
+                            <h1 class="text-white">ASAN</h1>
+                            <small class="text-primary">Services Associate India</small>
                         </a>
-                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
+                        <p class="mb-0">India's premier engineering consultancy with 35+ years of experience in delivering comprehensive engineering solutions across various sectors.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-3"><i class="fa fa-map-marker-alt me-3 text-primary"></i>House No. 43, Ganesh Anita Vihar, Jabalpur, MP</p>
+                        <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-9300106147</p>
+                        <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-7987190070</p>
+                        <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanengineering.com</p>
+                        <p class="mb-0"><i class="fa fa-globe me-3 text-primary"></i>www.asanindiaservices.com</p>
+                        <div class="d-flex pt-3">
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link d-block text-start mb-2" href="index.html">Home</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="about.html">About Us</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="services.html">Services</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="team.html">Our Team</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                        <h5 class="text-white mb-4">Our Services</h5>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Civil Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Electrical Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Mechanical Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Computer Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">AI & ML Solutions</a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">Quick Links</h5>
-                    <a class="btn btn-link d-block text-start mb-2" href="index.html">Home</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="about.html">About Us</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="services.html">Services</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="contact.html">Contact Us</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="team.html">Our Team</a>
+            </div>
+        </div>
 
-                </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
-                    <h5 class="text-white mb-4">Our Services</h5>
-                    <a class="btn btn-link d-block text-start mb-2" href="service.html">Civil Engineering</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="service.html">Electrical Engineering</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="service.html">Mechanical Engineering</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="service.html">Computer Engineering</a>
-                    <a class="btn btn-link d-block text-start mb-2" href="service.html">AI & ML Solutions</a>
+        <!-- Copyright Section -->
+        <div class="container-fluid border-top border-secondary py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        <span class="text-white-50">&copy; <a class="text-white" href="index.html">ASAN Services Associate India Private Limited</a>, All Rights Reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-white-50">35+ Years of Engineering Excellence</span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <!-- Footer End -->
 
-    <!-- Copyright Section -->
-    <div class="container-fluid border-top border-secondary py-4">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
-                    <span class="text-white-50">&copy; <a class="text-white" href="index.html">ASAN Services Associate India Private Limited</a>, All Rights Reserved.</span>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <span class="text-white-50">35+ Years of Engineering Excellence</span>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- Footer End -->
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
 
-<!-- Back to Top -->
-<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
-    <i class="bi bi-arrow-up"></i>
-</a>
-
-<style>
-/* Footer Styling */
-.footer {
-    margin: 0;
-    padding: 0;
-}
-
-.footer .container-fluid {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.footer .btn-link {
-    color: #adb5bd;
-    text-decoration: none;
-    padding: 0;
-    margin: 0;
-    transition: all 0.3s ease;
-}
-
-.footer .btn-link:hover {
-    color: #ffffff;
-    padding-left: 5px;
-}
-
-.footer .border-top {
-    border-color: #495057 !important;
-}
-
-/* Back to Top Button */
-.back-to-top {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    z-index: 99;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    transition: all 0.3s ease;
-    background: var(--primary);
-    border: none;
-}
-
-.back-to-top:hover {
-    background: #154360;
-    transform: translateY(-2px);
-}
-
-.back-to-top.show {
-    opacity: 1;
-}
-
-/* Social media icons hover effect */
-.btn-outline-primary.btn-square {
-    transition: all 0.3s ease;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-outline-primary.btn-square:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .footer .container {
-        padding-left: 15px;
-        padding-right: 15px;
-    }
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
     
-    .footer .btn-link {
-        font-size: 0.9rem;
-    }
-    
-    .back-to-top {
-        bottom: 20px;
-        right: 20px;
-        width: 45px;
-        height: 45px;
-    }
-}
-
-@media (max-width: 576px) {
-    .footer .col-md-6 {
-        margin-bottom: 2rem;
-    }
-    
-    .footer h5 {
-        font-size: 1.1rem;
-    }
-    
-    .footer p, .footer .btn-link {
-        font-size: 0.85rem;
-    }
-    
-    .back-to-top {
-        width: 40px;
-        height: 40px;
-        bottom: 15px;
-        right: 15px;
-    }
-    
-    .back-to-top i {
-        font-size: 1rem;
-    }
-    
-    .footer .d-flex.pt-3 {
-        justify-content: center;
-    }
-}
-
-/* Smooth scrolling for back to top */
-html {
-    scroll-behavior: smooth;
-}
-
-/* Additional styling for better appearance */
-.footer a.text-white:hover {
-    color: var(--primary) !important;
-    text-decoration: none;
-}
-
-.footer .border-secondary {
-    border-color: #6c757d !important;
-}
-</style>
-
-<script>
-// Back to top button functionality
-$(document).ready(function(){
-    $(window).scroll(function(){
-        if ($(this).scrollTop() > 300) {
-            $('.back-to-top').addClass('show');
-        } else {
-            $('.back-to-top').removeClass('show');
-        }
-    });
-    
-    $('.back-to-top').click(function(){
-        $('html, body').animate({scrollTop: 0}, 800);
-        return false;
-    });
-});
-</script>
-
-<!-- JavaScript Libraries -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="lib/wow/wow.min.js"></script>
-<script src="lib/easing/easing.min.js"></script>
-<script src="lib/waypoints/waypoints.min.js"></script>
-<script src="lib/owlcarousel/owl.carousel.min.js"></script>
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+    
+    <script>
+        // Team Members Data
+        const teamMembers = [
+            {name:"Er. ANIL KHARE", role:"Founder & Managing Director", desc:"M.Tech Structure Engineer with 35+ years experience in project management and strategic planning", img:"img/tt2.png"},
+            {name:"Er. NIKHIL KHARE", role:"Board of Director", desc:"B.E. (C.S.) with expertise in software testing, application modification, and technical documentation", img:"img/t1.jpg"},
+            {name:"Er. ANUSHKA KHARE", role:"Word of Director", desc:"B.E. (C.S.) specializing in system requirements analysis and implementing innovative solutions", img:"img/t2.jpg"},
+            {name:"SANDHYA KHARE", role:"Board of Director, Legal Advisor", desc:"M.A., L.L.B. with 25+ years experience in legal documentation and office management", img:"img/t3.png"},
+            {name:"E. ASHOK K. KHARE", role:"Electrical Engineer", desc:"B.E. (E.S.) with 25+ years experience in electrical power systems for commercial projects", img:"img/t4.png"},
+            {name:"Er. MANISH WARWADE", role:"Surveyor", desc:"M.Sc. with 15+ years experience in professional surveying across MP and Chhattisgarh", img:"img/t5.png"},
+            {name:"VISHWASH MISHRA", role:"General Manager", desc:"Marketing Head with 15+ years experience in management across MP and Chhattisgarh", img:"img/tt3.png"},
+            {name:"UNNATI GUMASTA", role:"Marketing Manager", desc:"M.B.A. with 5+ years experience in professional management and marketing", img:"img/t7.png"},
+            {name:"Er. PRAMOD SHRIVASTAVA", role:"Quality Engineer", desc:"B.E. Civil with 22+ years experience in quality engineering and manufacturing processes", img:"img/tt.png"},
+            {name:"Er. AKHILESH SINHA", role:"Mechanical Engineer", desc:"B.E. Mechanical with 8+ years experience in automated manufacturing equipment design", img:"img/t6.png"},
+            {name:"RITESH RAMWANI", role:"Structural Engineer", desc:"M.Tech. Structural with 15+ years experience in structural evaluations and design assistance", img:"img/t8.png"},
+            {name:"MUKESH THAKUR", role:"Civil Engineer", desc:"B.E. Civil with 15+ years experience in project management and infrastructure design", img:"img/tm.png"}
+        ];
+
+        // Function to render team members
+        function renderTeamMembers() {
+            const teamContainer = document.querySelector('.row.g-4');
+            
+            teamMembers.forEach((member, index) => {
+                const teamMemberHTML = `
+                    <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="${0.1+0.1*index}s">
+                        <div class="d-flex align-items-center bg-white rounded shadow overflow-hidden team-member-card ${index%2!==0?'flex-lg-row-reverse':''}">
+                            <div class="flex-shrink-0">
+                                <img src="${member.img}" alt="${member.name}" class="img-fluid"
+                                    style="width: 300px; height: 300px; object-fit: cover;"
+                                    onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=${member.name.replace(/ /g,'+')}'">
+                            </div>
+                            <div class="p-4 team-member-info">
+                                <h5>${member.name}</h5>
+                                <span class="text-primary">${member.role}</span>
+                                <p class="text-muted mt-2">${member.desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                teamContainer.innerHTML += teamMemberHTML;
+            });
+        }
+
+        // Call the function when DOM is loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            renderTeamMembers();
+            
+            // Back to top button functionality
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 300) {
+                        $('.back-to-top').addClass('show');
+                    } else {
+                        $('.back-to-top').removeClass('show');
+                    }
+                });
+                
+                $('.back-to-top').click(function(){
+                    $('html, body').animate({scrollTop: 0}, 800);
+                    return false;
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
