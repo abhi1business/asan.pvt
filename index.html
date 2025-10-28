@@ -28,6 +28,18 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+
+
+<style>
+    .container-fluid.sticky-top {
+        background-color: #d4e8e6 !important;
+    }
+    .navbar {
+        background-color: transparent !important; /* Keep navbar clean */
+    }
+</style>
+
+
 </head>
 
 <body>
@@ -59,6 +71,8 @@
                         <a href="service.html" class="nav-item nav-link">Services</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
                         <a href="project.html" class="nav-item nav-link">Projects</a>
+                                                <a href="product.html" class="nav-item nav-link ">Products</a>
+
                         <a href="team.html" class="nav-item nav-link">Our Team</a>
 
                     </div>
@@ -68,60 +82,523 @@
     </div>
     <!-- Navbar End -->
 
-    <!-- Hero Start -->
-    <div class="container-fluid pb-5 hero-header bg-light mb-5">
-        <div class="container py-5">
-            <div class="row g-5 align-items-center mb-5">
-                <div class="col-lg-6">
-                    <h1 class="display-1 mb-4 animated slideInRight">35+ Years of <span class="text-primary">Engineering Excellence</span> in India</h1>
-                    <h5 class="d-inline-block border border-2 border-primary py-3 px-5 mb-0 animated slideInRight">
-                        Comprehensive Engineering & Construction Consultancy</h5>
+<!-- Hero Start -->
+<div class="container-fluid px-0 hero-section">
+    <div class="hero-slider">
+        <div class="hero-slide active" style="background-image: url('img/engineering-consultancy.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-slide" style="background-image: url('img/construction.webp');">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-slide" style="background-image: url('img/project.webp');">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-slide" style="background-image: url('img/sl4.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-slide" style="background-image: url('img/sl5.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+        <div class="hero-slide" style="background-image: url('img/sl6.jpg');">
+            <div class="hero-overlay"></div>
+        </div>
+    </div>
+    
+    <div class="container position-relative z-1">
+        <div class="row g-4 align-items-center hero-content">
+            <div class="col-lg-8 col-md-10 mx-auto text-center">
+                <h1 class="display-3 mb-4 hero-title animated slideInRight">
+                    35+ Years of <span class="text-primary">Engineering Excellence</span> in India
+                </h1>
+                <div class="hero-tagline animated slideInRight">
+                    Comprehensive Engineering & Construction Consultancy
                 </div>
-                <div class="col-lg-6">
-                    <div class="owl-carousel header-carousel animated fadeIn">
-                        <img class="img-fluid" src="img/engineering-consultancy.jpg" alt="Engineering Consultancy">
-                        <img class="img-fluid" src="img/construction.webp" alt="Construction Services">
-                        <img class="img-fluid" src="img/project.webp" alt="Project Management">
-                    </div>
-                </div>
-            </div>
-            <div class="row g-5 animated fadeIn">
-                <div class="col-md-6 col-lg-3">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 btn-square border border-2 border-primary me-3">
-                            <i class="fa fa-users text-primary"></i>
-                        </div>
-                        <h5 class="lh-base mb-0">Expert Engineering Team</h5>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 btn-square border border-2 border-primary me-3">
-                            <i class="fa fa-certificate text-primary"></i>
-                        </div>
-                        <h5 class="lh-base mb-0">Quality Certified Services</h5>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 btn-square border border-2 border-primary me-3">
-                            <i class="fa fa-clock text-primary"></i>
-                        </div>
-                        <h5 class="lh-base mb-0">Timely Project Delivery</h5>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-3">
-                    <div class="d-flex align-items-center">
-                        <div class="flex-shrink-0 btn-square border border-2 border-primary me-3">
-                            <i class="fa fa-headset text-primary"></i>
-                        </div>
-                        <h5 class="lh-base mb-0">24/7 Technical Support</h5>
-                    </div>
+                <div class="hero-buttons mt-4 animated fadeInUp">
+                    <a href="contact.html" class="btn btn-primary btn-lg me-3">Get Started</a>
+                    <a href="about.html" class="btn btn-outline-light btn-lg">Learn More</a>
                 </div>
             </div>
         </div>
     </div>
-    <!-- Hero End -->
+    
+    <!-- Slider Controls -->
+    <div class="slider-controls">
+        <button class="slider-prev">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="slider-next">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
+    
+    <!-- Slider Indicators -->
+    <div class="slider-indicators">
+        <span class="indicator active" data-slide="0"></span>
+        <span class="indicator" data-slide="1"></span>
+        <span class="indicator" data-slide="2"></span>
+        <span class="indicator" data-slide="3"></span>
+        <span class="indicator" data-slide="4"></span>
+        <span class="indicator" data-slide="5"></span>
+    </div>
+</div>
+<!-- Hero End -->
+
+<style>
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    background: #1a1a1a;
+    height: 85vh;
+    min-height: 600px;
+    max-height: 800px;
+}
+
+.hero-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.hero-slide.active {
+    opacity: 1;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%);
+}
+
+.hero-content {
+    height: 85vh;
+    min-height: 600px;
+    max-height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-title {
+    color: white;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem !important;
+}
+
+.hero-title .text-primary {
+    color: #0d6efd !important;
+    text-shadow: 0 2px 4px rgba(13, 110, 253, 0.3);
+}
+
+.hero-tagline {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    color: white;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.25rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
+.hero-buttons .btn {
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    border: none;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+}
+
+.hero-buttons .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(13, 110, 253, 0.4);
+}
+
+.hero-buttons .btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    background: transparent;
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    transform: translateY(50%);
+}
+
+.slider-prev,
+.slider-next {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.slider-prev:hover,
+.slider-next:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+.slider-indicators {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 90%;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    flex-shrink: 0;
+}
+
+.indicator.active {
+    background: white;
+    transform: scale(1.2);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Enhanced Mobile Responsiveness */
+@media (max-width: 1199.98px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        height: 75vh;
+        min-height: 500px;
+    }
+    
+    .hero-content {
+        height: 75vh;
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .hero-tagline {
+        font-size: 1.1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-section {
+        height: 70vh;
+        min-height: 450px;
+    }
+    
+    .hero-content {
+        height: 70vh;
+        min-height: 450px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 1rem !important;
+    }
+    
+    .hero-tagline {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        width: 100%;
+        max-width: 280px;
+        margin: 0 auto;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin: 0 !important;
+    }
+    
+    .slider-controls {
+        padding: 0 10px;
+    }
+    
+    .slider-prev,
+    .slider-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .slider-indicators {
+        bottom: 20px;
+        gap: 6px;
+    }
+    
+    .indicator {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .hero-section {
+        height: 65vh;
+        min-height: 400px;
+    }
+    
+    .hero-content {
+        height: 65vh;
+        min-height: 400px;
+    }
+    
+    .hero-title {
+        font-size: 1.6rem;
+    }
+    
+    .hero-tagline {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+    
+    .hero-buttons .btn {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
+    }
+    
+    .slider-prev,
+    .slider-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .slider-indicators {
+        gap: 5px;
+    }
+    
+    .indicator {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+@media (max-width: 400px) {
+    .hero-title {
+        font-size: 1.4rem;
+    }
+    
+    .hero-tagline {
+        font-size: 0.85rem;
+        padding: 0.5rem 0.8rem;
+    }
+    
+    .slider-indicators {
+        gap: 4px;
+    }
+    
+    .indicator {
+        width: 7px;
+        height: 7px;
+    }
+}
+
+/* Animation delays for better visual flow */
+.animated.slideInRight {
+    animation-delay: 0.2s;
+}
+
+.animated.fadeInUp {
+    animation-delay: 0.5s;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const indicators = document.querySelectorAll('.indicator');
+    const prevBtn = document.querySelector('.slider-prev');
+    const nextBtn = document.querySelector('.slider-next');
+    let currentSlide = 0;
+    let slideInterval;
+
+    // Function to show a specific slide
+    function showSlide(index) {
+        // Remove active class from all slides and indicators
+        slides.forEach(slide => slide.classList.remove('active'));
+        indicators.forEach(indicator => indicator.classList.remove('active'));
+        
+        // Add active class to current slide and indicator
+        slides[index].classList.add('active');
+        indicators[index].classList.add('active');
+        
+        currentSlide = index;
+    }
+
+    // Function to show next slide
+    function nextSlide() {
+        let next = currentSlide + 1;
+        if (next >= slides.length) {
+            next = 0;
+        }
+        showSlide(next);
+    }
+
+    // Function to show previous slide
+    function prevSlide() {
+        let prev = currentSlide - 1;
+        if (prev < 0) {
+            prev = slides.length - 1;
+        }
+        showSlide(prev);
+    }
+
+    // Event listeners for controls
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    // Event listeners for indicators
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            showSlide(index);
+            resetInterval();
+        });
+    });
+
+    // Auto slide functionality
+    function startInterval() {
+        slideInterval = setInterval(nextSlide, 4000); // Slightly faster for 6 images
+    }
+
+    function resetInterval() {
+        clearInterval(slideInterval);
+        startInterval();
+    }
+
+    // Start the auto slide
+    startInterval();
+
+    // Pause on hover
+    const slider = document.querySelector('.hero-slider');
+    slider.addEventListener('mouseenter', () => {
+        clearInterval(slideInterval);
+    });
+    
+    slider.addEventListener('mouseleave', () => {
+        startInterval();
+    });
+
+    // Touch swipe support for mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+    
+    slider.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
+    });
+    
+    slider.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+    });
+    
+    function handleSwipe() {
+        if (touchEndX < touchStartX - 50) {
+            nextSlide();
+            resetInterval();
+        }
+        if (touchEndX > touchStartX + 50) {
+            prevSlide();
+            resetInterval();
+        }
+    }
+
+    // Handle window resize for better mobile experience
+    window.addEventListener('resize', function() {
+        // Adjust content positioning on resize
+        const heroContent = document.querySelector('.hero-content');
+        if (window.innerHeight < 600) {
+            heroContent.style.alignItems = 'flex-start';
+            heroContent.style.paddingTop = '2rem';
+        } else {
+            heroContent.style.alignItems = 'center';
+            heroContent.style.paddingTop = '0';
+        }
+    });
+
+    // Initial check for small screens
+    if (window.innerHeight < 600) {
+        const heroContent = document.querySelector('.hero-content');
+        heroContent.style.alignItems = 'flex-start';
+        heroContent.style.paddingTop = '2rem';
+    }
+
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'ArrowLeft') {
+            prevSlide();
+            resetInterval();
+        } else if (e.key === 'ArrowRight') {
+            nextSlide();
+            resetInterval();
+        }
+    });
+});
+</script>
 
 <!-- About Start -->
 <div class="container-fluid py-5">
@@ -1075,149 +1552,191 @@
             <p class="lead mb-5">Our team of 100+ qualified engineers with 35+ years of collective experience</p>
         </div>
 
-        <!-- Team Slider -->
-        <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay="0.3s">
-            <!-- Er. ANIL KHARE -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t111.png" alt="Er. ANIL KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+ANIL+KHARE'">
+        <!-- Board of Directors Section -->
+        <div class="mb-5">
+            <div class="section-header mb-4">
+                <h2 class="text-center text-primary position-relative pb-3 mb-4">
+                    <i class="fas fa-crown me-2"></i>Board of Directors
+                    <span class="position-absolute bottom-0 start-50 translate-middle-x bg-primary" style="width: 80px; height: 3px;"></span>
+                </h2>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Er. ANIL KHARE -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item bg-white rounded shadow position-relative director-card">
+                        <div class="director-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/t111.png" alt="Er. ANIL KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+ANIL+KHARE'">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">Er. ANIL KHARE</h5>
+                            <span class="text-primary">Founder & Managing Director</span>
+                            <p class="text-muted small mt-2">M.Tech Structure Engineer with 35+ years experience in project management and strategic planning</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">Er. ANIL KHARE</h5>
-                    <span class="text-primary">Founder & Managing Director</span>
-                    <p class="text-muted small mt-2">M.Tech Structure Engineer with 35+ years experience in project management and strategic planning</p>
+
+                <!-- Er. NIKHIL KHARE -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item bg-white rounded shadow position-relative director-card">
+                        <div class="director-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/t1.jpg" alt="Er. NIKHIL KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+NIKHIL+KHARE'">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">Er. NIKHIL KHARE</h5>
+                            <span class="text-primary">Board of Director</span>
+                            <p class="text-muted small mt-2">B.E. (C.S.) with expertise in software testing, application modification, and technical documentation</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Er. ANUSHKA KHARE -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item bg-white rounded shadow position-relative director-card">
+                        <div class="director-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/t2.jpg" alt="Er. ANUSHKA KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+ANUSHKA+KHARE'">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">Er. ANUSHKA KHARE</h5>
+                            <span class="text-primary">Board of Director</span>
+                            <p class="text-muted small mt-2">B.E. (C.S.) specializing in system requirements analysis and implementing innovative solutions</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SANDHYA KHARE -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="team-item bg-white rounded shadow position-relative director-card">
+                        <div class="director-badge">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/t3.png" alt="SANDHYA KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=SANDHYA+KHARE'">
+                        </div>
+                        <div class="text-center p-4">
+                            <h5 class="mb-1">SANDHYA KHARE</h5>
+                            <span class="text-primary">Board of Director, Legal Advisor</span>
+                            <p class="text-muted small mt-2">M.A., L.L.B. with 25+ years experience in legal documentation and office management</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+        </div>
 
-            <!-- Er. NIKHIL KHARE -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t1.jpg" alt="Er. NIKHIL KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+NIKHIL+KHARE'">
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">Er. NIKHIL KHARE</h5>
-                    <span class="text-primary">Board of Director</span>
-                    <p class="text-muted small mt-2">B.E. (C.S.) with expertise in software testing, application modification, and technical documentation</p>
-                </div>
+        <!-- Engineering Team Section -->
+        <div class="mt-5">
+            <div class="section-header mb-4">
+                <h2 class="text-center text-primary position-relative pb-3 mb-4">
+                    <i class="fas fa-users me-2"></i>Engineering Team
+                    <span class="position-absolute bottom-0 start-50 translate-middle-x bg-primary" style="width: 80px; height: 3px;"></span>
+                </h2>
             </div>
+            
+            <!-- Team Slider -->
+            <div class="owl-carousel team-carousel wow fadeIn" data-wow-delay="0.3s">
+                <!-- E. ASHOK K. KHARE -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/t4.png" alt="E. ASHOK K. KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=E.+ASHOK+K.+KHARE'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">E. ASHOK K. KHARE</h5>
+                        <span class="text-primary">Electrical Engineer</span>
+                        <p class="text-muted small mt-2">B.E. (E.S.) with 25+ years experience in electrical power systems for commercial projects</p>
+                    </div>
+                </div>
 
-            <!-- Er. ANUSHKA KHARE -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t2.jpg" alt="Er. ANUSHKA KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+ANUSHKA+KHARE'">
+                <!-- Er. MANISH WARWADE -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/t5.png" alt="Er. MANISH WARWADE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+MANISH+WARWADE'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">Er. MANISH WARWADE</h5>
+                        <span class="text-primary">Surveyor</span>
+                        <p class="text-muted small mt-2">M.Sc. with 15+ years experience in professional surveying across MP and Chhattisgarh</p>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">Er. ANUSHKA KHARE</h5>
-                    <span class="text-primary">Word of Director</span>
-                    <p class="text-muted small mt-2">B.E. (C.S.) specializing in system requirements analysis and implementing innovative solutions</p>
-                </div>
-            </div>
 
-            <!-- SANDHYA KHARE -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t3.png" alt="SANDHYA KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=SANDHYA+KHARE'">
+                <!-- VISHWASH MISHRA -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/tt3.png" alt="VISHWASH MISHRA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=VISHWASH+MISHRA'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">VISHWASH MISHRA</h5>
+                        <span class="text-primary">General Manager</span>
+                        <p class="text-muted small mt-2">Marketing Head with 15+ years experience in management across MP and Chhattisgarh</p>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">SANDHYA KHARE</h5>
-                    <span class="text-primary">Board of Director, Legal Advisor</span>
-                    <p class="text-muted small mt-2">M.A., L.L.B. with 25+ years experience in legal documentation and office management</p>
-                </div>
-            </div>
 
-            <!-- E. ASHOK K. KHARE -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t4.png" alt="E. ASHOK K. KHARE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=E.+ASHOK+K.+KHARE'">
+                <!-- UMATI GUMASTA -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/t7.png" alt="UMATI GUMASTA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=UMATI+GUMASTA'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">UNNATI GUMASTA</h5>
+                        <span class="text-primary">Marketing Manager</span>
+                        <p class="text-muted small mt-2">M.B.A. with 5+ years experience in professional management and marketing</p>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">E. ASHOK K. KHARE</h5>
-                    <span class="text-primary">Electrical Engineer</span>
-                    <p class="text-muted small mt-2">B.E. (E.S.) with 25+ years experience in electrical power systems for commercial projects</p>
-                </div>
-            </div>
 
-            <!-- Er. MANISH WARWADE -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t5.png" alt="Er. MANISH WARWADE" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+MANISH+WARWADE'">
+                <!-- Er. PRAMOD SHRIVASTAVA -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/tt.png" alt="Er. PRAMOD SHRIVASTAVA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+PRAMOD+SHRIVASTAVA'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">Er. PRAMOD SHRIVASTAVA</h5>
+                        <span class="text-primary">Quality Engineer</span>
+                        <p class="text-muted small mt-2">B.E. Civil with 22+ years experience in quality engineering and manufacturing processes</p>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">Er. MANISH WARWADE</h5>
-                    <span class="text-primary">Surveyor</span>
-                    <p class="text-muted small mt-2">M.Sc. with 15+ years experience in professional surveying across MP and Chhattisgarh</p>
-                </div>
-            </div>
 
-            <!-- VISHWASH MISHRA -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/tt3.png" alt="VISHWASH MISHRA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=VISHWASH+MISHRA'">
+                <!-- Er. AKHILESH SINHA -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/t6.png" alt="Er. AKHILESH SINHA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+AKHILESH+SINHA'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">Er. AKHILESH SINHA</h5>
+                        <span class="text-primary">Mechanical Engineer</span>
+                        <p class="text-muted small mt-2">B.E. Mechanical with 8+ years experience in automated manufacturing equipment design</p>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">VISHWASH MISHRA</h5>
-                    <span class="text-primary">General Manager</span>
-                    <p class="text-muted small mt-2">Marketing Head with 15+ years experience in management across MP and Chhattisgarh</p>
-                </div>
-            </div>
 
-            <!-- UMATI GUMASTA -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t7.png" alt="UMATI GUMASTA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=UMATI+GUMASTA'">
+                <!-- ARITESH RAMWANI -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/t8.png" alt="ARITESH RAMWANI" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=ARITESH+RAMWANI'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">RITESH RAMWANI</h5>
+                        <span class="text-primary">Structural Engineer</span>
+                        <p class="text-muted small mt-2">M.Tech. Structural with 15+ years experience in structural evaluations and design assistance</p>
+                    </div>
                 </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">UNNATI GUMASTA</h5>
-                    <span class="text-primary">Marketing Manager</span>
-                    <p class="text-muted small mt-2">M.B.A. with 5+ years experience in professional management and marketing</p>
-                </div>
-            </div>
 
-            <!-- Er. PRAMOD SHRIVASTAVA -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/tt.png" alt="Er. PRAMOD SHRIVASTAVA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+PRAMOD+SHRIVASTAVA'">
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">Er. PRAMOD SHRIVASTAVA</h5>
-                    <span class="text-primary">Quality Engineer</span>
-                    <p class="text-muted small mt-2">B.E. Civil with 22+ years experience in quality engineering and manufacturing processes</p>
-                </div>
-            </div>
-
-            <!-- Er. AKHILESH SINHA -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t6.png" alt="Er. AKHILESH SINHA" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=Er.+AKHILESH+SINHA'">
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">Er. AKHILESH SINHA</h5>
-                    <span class="text-primary">Mechanical Engineer</span>
-                    <p class="text-muted small mt-2">B.E. Mechanical with 8+ years experience in automated manufacturing equipment design</p>
-                </div>
-            </div>
-
-            <!-- ARITESH RAMWANI -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/t8.png" alt="ARITESH RAMWANI" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=ARITESH+RAMWANI'">
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">RITESH RAMWANI</h5>
-                    <span class="text-primary">Structural Engineer</span>
-                    <p class="text-muted small mt-2">M.Tech. Structural with 15+ years experience in structural evaluations and design assistance</p>
-                </div>
-            </div>
-
-            <!-- MUKESH THAKUR -->
-            <div class="team-item bg-white rounded shadow">
-                <div class="team-img position-relative overflow-hidden">
-                    <img class="img-fluid w-100" src="img/tm.png" alt="MUKESH THAKUR" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=MUKESH+THAKUR'">
-                </div>
-                <div class="text-center p-4">
-                    <h5 class="mb-1">MUKESH THAKUR</h5>
-                    <span class="text-primary">Civil Engineer</span>
-                    <p class="text-muted small mt-2">B.E. Civil with 15+ years experience in project management and infrastructure design</p>
+                <!-- MUKESH THAKUR -->
+                <div class="team-item bg-white rounded shadow">
+                    <div class="team-img position-relative overflow-hidden">
+                        <img class="img-fluid w-100" src="img/tm.png" alt="MUKESH THAKUR" style="height: 300px; object-fit: cover;" onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=MUKESH+THAKUR'">
+                    </div>
+                    <div class="text-center p-4">
+                        <h5 class="mb-1">MUKESH THAKUR</h5>
+                        <span class="text-primary">Civil Engineer</span>
+                        <p class="text-muted small mt-2">B.E. Civil with 15+ years experience in project management and infrastructure design</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1280,6 +1799,38 @@
 
 .team-item:hover .team-img img {
     transform: scale(1.05);
+}
+
+/* Director Cards Special Styling */
+.director-card {
+    border: 2px solid #1a5276;
+    position: relative;
+}
+
+.director-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #1a5276;
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+}
+
+.director-card:hover {
+    border-color: #154360;
+    box-shadow: 0 15px 40px rgba(26, 82, 118, 0.2) !important;
+}
+
+/* Section Headers */
+.section-header h2 {
+    font-weight: 600;
 }
 
 /* Owl Carousel Customization */
@@ -1347,6 +1898,13 @@
     .team-item {
         margin: 0 15px;
     }
+    
+    .director-badge {
+        width: 35px;
+        height: 35px;
+        top: 10px;
+        right: 10px;
+    }
 }
 
 @media (max-width: 576px) {
@@ -1360,6 +1918,17 @@
     
     .team-carousel .owl-nav {
         padding: 0 10px;
+    }
+    
+    .director-badge {
+        width: 30px;
+        height: 30px;
+        top: 8px;
+        right: 8px;
+    }
+    
+    .director-badge i {
+        font-size: 0.8rem;
     }
 }
 </style>
@@ -1378,7 +1947,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 0: { items: 1 },
                 576: { items: 1 },
                 768: { items: 2 },
-                992: { items: 4 }
+                992: { items: 3 }
             },
             nav: true,
             navText: ['<i class="fa fa-chevron-left"></i>', '<i class="fa fa-chevron-right"></i>'],
@@ -1861,6 +2430,8 @@ textarea.form-control {
                     <h5 class="text-white mb-4">Get In Touch</h5>
                     <p class="mb-3"><i class="fa fa-map-marker-alt me-3 text-primary"></i>House No. 43, Ganesh Anita Vihar, Jabalpur, MP</p>
                     <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-9300106147</p>
+                    <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-7987190070</p>
+
                     <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanengineering.com</p>
                     <p class="mb-0"><i class="fa fa-globe me-3 text-primary"></i>www.asanindiaservices.com</p>
                     <div class="d-flex pt-3">
@@ -1885,6 +2456,7 @@ textarea.form-control {
                     <a class="btn btn-link d-block text-start mb-2" href="services.html">Services</a>
                     <a class="btn btn-link d-block text-start mb-2" href="contact.html">Contact Us</a>
                     <a class="btn btn-link d-block text-start mb-2" href="project.html">Projects</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="product.html">Products</a>
 
                     <a class="btn btn-link d-block text-start mb-2" href="team.html">Our Team</a>
 

@@ -110,6 +110,74 @@
             margin-top: 0.5rem;
         }
         
+        /* Board of Directors Highlight */
+        .board-member {
+            position: relative;
+            border: 3px solid #f39c12 !important;
+            box-shadow: 0 0 15px rgba(243, 156, 18, 0.3) !important;
+        }
+        
+        .board-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .board-section-title {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+        
+        .board-section-title h2 {
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .board-section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a5276;
+            z-index: 0;
+        }
+        
+        .engineer-section-title {
+            position: relative;
+            margin: 3rem 0 2rem 0;
+        }
+        
+        .engineer-section-title h2 {
+            display: inline-block;
+            background: white;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .engineer-section-title::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #1a5276;
+            z-index: 0;
+        }
+        
         /* Media Queries for Specific Breakpoints */
         @media (min-width: 768px) {
             .hero-header h1.display-1 {
@@ -164,6 +232,11 @@
             .back-to-top i {
                 font-size: 1rem;
             }
+            
+            .board-badge {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+            }
         }
     </style>
 </head>
@@ -195,7 +268,8 @@
                         <a href="about.html" class="nav-item nav-link">About</a>
                         <a href="service.html" class="nav-item nav-link">Services</a>
                         <a href="contact.html" class="nav-item nav-link">Contact</a>
-                                                <a href="project.html" class="nav-item nav-link">Projects</a>
+                        <a href="project.html" class="nav-item nav-link">Projects</a>
+                                                <a href="product.html" class="nav-item nav-link ">Products</a>
 
                         <a href="team.html" class="nav-item nav-link active">Our Team</a>
                     </div>
@@ -234,13 +308,22 @@
                 <p class="lead mb-5">Our team of 100+ qualified engineers with 35+ years of collective experience</p>
             </div>
 
-            <div class="row g-5">
-                <!-- Team Members Data -->
-                <div class="col-12">
-                    <div class="row g-4">
-                        <!-- Team members will be inserted here by JavaScript -->
-                    </div>
-                </div>
+            <!-- Board of Directors Section -->
+            <div class="text-center board-section-title">
+                <h2 class="text-primary">Board of Directors</h2>
+            </div>
+            
+            <div class="row g-4 mb-5" id="boardMembers">
+                <!-- Board members will be inserted here by JavaScript -->
+            </div>
+
+            <!-- Engineering Team Section -->
+            <div class="text-center engineer-section-title">
+                <h2 class="text-primary">Engineering Team</h2>
+            </div>
+            
+            <div class="row g-4" id="engineeringTeam">
+                <!-- Engineering team members will be inserted here by JavaScript -->
             </div>
         </div>
     </div>
@@ -262,6 +345,9 @@
                         <h5 class="text-white mb-4">Get In Touch</h5>
                         <p class="mb-3"><i class="fa fa-map-marker-alt me-3 text-primary"></i>House No. 43, Ganesh Anita Vihar, Jabalpur, MP</p>
                         <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-9300106147</p>
+<p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-7987190070</p>
+
+                        
                         <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanengineering.com</p>
                         <p class="mb-0"><i class="fa fa-globe me-3 text-primary"></i>www.asanindiaservices.com</p>
                         <div class="d-flex pt-3">
@@ -285,7 +371,8 @@
                         <a class="btn btn-link d-block text-start mb-2" href="about.html">About Us</a>
                         <a class="btn btn-link d-block text-start mb-2" href="services.html">Services</a>
                         <a class="btn btn-link d-block text-start mb-2" href="contact.html">Contact Us</a>
-                                            <a class="btn btn-link d-block text-start mb-2" href="project.html">Projects</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="project.html">Projects</a>
+                                                <a class="btn btn-link d-block text-start mb-2" href="product.html">Products</a>
 
                         <a class="btn btn-link d-block text-start mb-2" href="team.html">Our Team</a>
                     </div>
@@ -338,7 +425,7 @@
         const teamMembers = [
             {name:"Er. ANIL KHARE", role:"Founder & Managing Director", desc:"M.Tech Structure Engineer with 35+ years experience in project management and strategic planning", img:"img/t111.png"},
             {name:"Er. NIKHIL KHARE", role:"Board of Director", desc:"B.E. (C.S.) with expertise in software testing, application modification, and technical documentation", img:"img/t1.jpg"},
-            {name:"Er. ANUSHKA KHARE", role:"Word of Director", desc:"B.E. (C.S.) specializing in system requirements analysis and implementing innovative solutions", img:"img/t2.jpg"},
+            {name:"Er. ANUSHKA KHARE", role:"Board of Director", desc:"B.E. (C.S.) specializing in system requirements analysis and implementing innovative solutions", img:"img/t2.jpg"},
             {name:"SANDHYA KHARE", role:"Board of Director, Legal Advisor", desc:"M.A., L.L.B. with 25+ years experience in legal documentation and office management", img:"img/t3.png"},
             {name:"E. ASHOK K. KHARE", role:"Electrical Engineer", desc:"B.E. (E.S.) with 25+ years experience in electrical power systems for commercial projects", img:"img/t4.png"},
             {name:"Er. MANISH WARWADE", role:"Surveyor", desc:"M.Sc. with 15+ years experience in professional surveying across MP and Chhattisgarh", img:"img/t5.png"},
@@ -350,12 +437,45 @@
             {name:"MUKESH THAKUR", role:"Civil Engineer", desc:"B.E. Civil with 15+ years experience in project management and infrastructure design", img:"img/tm.png"}
         ];
 
-        // Function to render team members
-        function renderTeamMembers() {
-            const teamContainer = document.querySelector('.row.g-4');
+        // Function to render board members
+        function renderBoardMembers() {
+            const boardContainer = document.getElementById('boardMembers');
             
-            teamMembers.forEach((member, index) => {
-                const teamMemberHTML = `
+            // First 4 members are board members
+            const boardMembers = teamMembers.slice(0, 4);
+            
+            boardMembers.forEach((member, index) => {
+                const boardMemberHTML = `
+                    <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="${0.1+0.1*index}s">
+                        <div class="d-flex align-items-center bg-white rounded shadow overflow-hidden team-member-card board-member ${index%2!==0?'flex-lg-row-reverse':''}">
+                            <div class="flex-shrink-0 position-relative">
+                                <span class="board-badge">Board of Director</span>
+                                <img src="${member.img}" alt="${member.name}" class="img-fluid"
+                                    style="width: 300px; height: 300px; object-fit: cover;"
+                                    onerror="this.src='https://via.placeholder.com/300x300/1a5276/ffffff?text=${member.name.replace(/ /g,'+')}'">
+                            </div>
+                            <div class="p-4 team-member-info">
+                                <h5>${member.name}</h5>
+                                <span class="text-primary">${member.role}</span>
+                                <p class="text-muted mt-2">${member.desc}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                boardContainer.innerHTML += boardMemberHTML;
+            });
+        }
+
+        // Function to render engineering team
+        function renderEngineeringTeam() {
+            const engineeringContainer = document.getElementById('engineeringTeam');
+            
+            // Members from index 4 onwards are engineering team
+            const engineeringTeam = teamMembers.slice(4);
+            
+            engineeringTeam.forEach((member, index) => {
+                const engineerHTML = `
                     <div class="col-12 col-md-6 wow fadeIn" data-wow-delay="${0.1+0.1*index}s">
                         <div class="d-flex align-items-center bg-white rounded shadow overflow-hidden team-member-card ${index%2!==0?'flex-lg-row-reverse':''}">
                             <div class="flex-shrink-0">
@@ -372,13 +492,14 @@
                     </div>
                 `;
                 
-                teamContainer.innerHTML += teamMemberHTML;
+                engineeringContainer.innerHTML += engineerHTML;
             });
         }
 
-        // Call the function when DOM is loaded
+        // Call the functions when DOM is loaded
         document.addEventListener('DOMContentLoaded', function() {
-            renderTeamMembers();
+            renderBoardMembers();
+            renderEngineeringTeam();
             
             // Back to top button functionality
             $(document).ready(function(){

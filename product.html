@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ASAN - Products</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Space+Grotesk&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/animate/animate.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Mobile Responsive Fixes */
+        
+        /* General Responsive Adjustments */
+        .container-fluid {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        /* Hero Section Fixes */
+        .hero-header h1.display-1 {
+            font-size: 2.5rem !important;
+        }
+        
+        .breadcrumb {
+            justify-content: center !important;
+        }
+        
+        /* Product Section Fixes */
+        .product-card {
+            flex-direction: column !important;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            border-radius: 12px;
+            height: 100%;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .product-card img {
+            width: 100% !important;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .product-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            padding: 1.5rem !important;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Footer Fixes */
+        .footer .col-md-6 {
+            margin-bottom: 2rem;
+        }
+        
+        .footer .d-flex.pt-3 {
+            justify-content: center;
+        }
+        
+        /* Navbar Fixes */
+        .navbar-brand h1 {
+            font-size: 1.5rem;
+        }
+        
+        .navbar-nav {
+            text-align: center;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            bottom: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+        }
+        
+        /* Responsive Typography */
+        h1 {
+            font-size: 2rem;
+        }
+        
+        h5 {
+            font-size: 1.25rem;
+        }
+        
+        p, span {
+            font-size: 0.9rem;
+        }
+        
+        /* Product Section Specific */
+        .text-uppercase.text-primary.bg-white.px-2 {
+            font-size: 1.5rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+        
+        /* Product Features */
+        .feature-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .feature-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .feature-list li:before {
+            content: "✓";
+            color: #1a5276;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Product Badge */
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f39c12;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        /* Product Highlight */
+        .product-highlight {
+            border-left: 4px solid #1a5276;
+            padding-left: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        /* Product Tabs */
+        .product-tabs {
+            border-bottom: 1px solid #dee2e6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .product-tabs .nav-link {
+            color: #6c757d;
+            font-weight: 500;
+            border: none;
+            padding: 0.75rem 1.5rem;
+        }
+        
+        .product-tabs .nav-link.active {
+            color: #1a5276;
+            border-bottom: 3px solid #1a5276;
+            background: transparent;
+        }
+        
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 0.75rem;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        /* Product Specifications */
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        
+        .spec-item {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #1a5276;
+        }
+        
+        .spec-item h6 {
+            margin-bottom: 0.5rem;
+            color: #1a5276;
+        }
+        
+        /* Expandable Content */
+        .expandable-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .expandable-content.expanded {
+            max-height: 1000px;
+        }
+        
+        .expand-btn {
+            background: transparent;
+            border: 1px solid #1a5276;
+            color: #1a5276;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .expand-btn:hover {
+            background: #1a5276;
+            color: white;
+        }
+        
+        .expand-btn i {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .expand-btn.expanded i {
+            transform: rotate(180deg);
+        }
+        
+        /* Product Gallery */
+        .product-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .gallery-thumb {
+            width: 100%;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-thumb:hover {
+            opacity: 0.8;
+        }
+        
+        /* Media Queries for Specific Breakpoints */
+        @media (min-width: 768px) {
+            .hero-header h1.display-1 {
+                font-size: 3.5rem !important;
+            }
+            
+            .product-card {
+                flex-direction: column !important;
+                text-align: left;
+            }
+            
+            .product-card img {
+                height: 250px;
+            }
+            
+            .navbar-nav {
+                text-align: right;
+            }
+            
+            .specs-grid {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (min-width: 992px) {
+            .hero-header h1.display-1 {
+                font-size: 4rem !important;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .product-card img {
+                height: 280px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-header h1.display-1 {
+                font-size: 2rem !important;
+            }
+            
+            .product-info {
+                padding: 1rem !important;
+            }
+            
+            .back-to-top {
+                width: 40px;
+                height: 40px;
+                bottom: 15px;
+                right: 15px;
+            }
+            
+            .back-to-top i {
+                font-size: 1rem;
+            }
+            
+            .comparison-table {
+                font-size: 0.8rem;
+            }
+            
+            .comparison-table th, .comparison-table td {
+                padding: 0.5rem;
+            }
+            
+            .specs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-grow text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light border-bottom border-2 border-white">
+                <a href="index.html" class="navbar-brand">
+                    <h1>ASAN</h1>
+                </a>
+                <button type="button" class="navbar-toggler ms-auto me-0" data-bs-toggle="collapse"
+                    data-bs-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto">
+                        <a href="index.html" class="nav-item nav-link">Home</a>
+                        <a href="about.html" class="nav-item nav-link">About</a>
+                        <a href="service.html" class="nav-item nav-link">Services</a>
+                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="project.html" class="nav-item nav-link">Projects</a>
+                                                <a href="product.html" class="nav-item nav-link active">Products</a>
+
+                        <a href="team.html" class="nav-item nav-link">Our Team</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Hero Start -->
+    <div class="container-fluid pb-5 bg-primary hero-header">
+        <div class="container py-5">
+            <div class="row g-3 align-items-center">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-1 mb-0 animated slideInLeft">Our Products</h1>
+                </div>
+                <div class="col-lg-6 animated slideInRight">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center justify-content-lg-end mb-0">
+                            <li class="breadcrumb-item"><a class="text-primary" href="index.html">Home</a></li>
+                            <li class="breadcrumb-item text-secondary active" aria-current="page">Products</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Hero End -->
+
+    <!-- Products Section Start -->
+    <div class="container-fluid py-5 bg-light">
+        <div class="container">
+            <div class="text-center wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="mb-3">Our Premium <span class="text-uppercase text-primary bg-white px-2">Products</span></h1>
+                <p class="lead mb-5">High-quality engineering solutions for modern construction needs</p>
+            </div>
+
+            <!-- FRP Rebars Product -->
+            <div class="row g-5 mb-5">
+                <div class="col-12">
+                    <div class="bg-white rounded shadow overflow-hidden product-card">
+                        <div class="position-relative">
+                            <span class="product-badge">Premium Product</span>
+                            <img src="/img/fib.webp" alt="FRP Rebars" class="img-fluid w-100">
+                        </div>
+                        <div class="p-4 product-info">
+                            <h3>FRP Rebars (Fiber Reinforced Polymer)</h3>
+                            <span class="text-primary">Advanced Corrosion-Resistant Reinforcement Solution</span>
+                            
+                            <div class="product-highlight">
+                                <p class="mb-2"><strong>Manufacturer:</strong> AAC FRP</p>
+                                <p class="mb-2"><strong>Reference:</strong> 25-26/AACFRP/ASAN/245</p>
+                                <p class="mb-0"><strong>Date:</strong> 10-09-2025</p>
+                            </div>
+                            
+                            <p class="text-muted mt-2">Next-generation "SMART" material that is long-lasting, anti-corrosive, and lightweight. Perfect for durable products like cable trays, gratings, electrical poles, solar panel stands, and fencing material.</p>
+                            
+                            <!-- Product Tabs -->
+                            <ul class="nav nav-tabs product-tabs" id="frp-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="frp-features-tab" data-bs-toggle="tab" data-bs-target="#frp-features" type="button" role="tab">Features</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="frp-specs-tab" data-bs-toggle="tab" data-bs-target="#frp-specs" type="button" role="tab">Specifications</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="frp-pricing-tab" data-bs-toggle="tab" data-bs-target="#frp-pricing" type="button" role="tab">Pricing</button>
+                                </li>
+                            </ul>
+                            
+                            <div class="tab-content" id="frp-tab-content">
+                                <!-- Features Tab -->
+                                <div class="tab-pane fade show active" id="frp-features" role="tabpanel">
+                                    <h5 class="mt-0">Key Advantages:</h5>
+                                    <ul class="feature-list">
+                                        <li>High corrosion resistance</li>
+                                        <li>Lightweight (80% lighter than steel)</li>
+                                        <li>Non-conductive - no electrical accidents risk</li>
+                                        <li>Longer lifespan (100+ years)</li>
+                                        <li>Low thermal conductivity</li>
+                                        <li>EMI/RFI transparent</li>
+                                        <li>Easy fabrication</li>
+                                        <li>Environmentally friendly</li>
+                                    </ul>
+                                    
+                                    <!-- Expandable Comparison Table -->
+                                    <button class="expand-btn" type="button">
+                                        View Comparison Table <i class="fas fa-chevron-down"></i>
+                                    </button>
+                                    
+                                    <div class="expandable-content mt-3">
+                                        <h6 class="mt-4">Comparison with Traditional Materials</h6>
+                                        <table class="comparison-table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Property</th>
+                                                    <th>FRP</th>
+                                                    <th>Steel</th>
+                                                    <th>Timber</th>
+                                                    <th>Aluminium</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Corrosion Resistance</td>
+                                                    <td>High</td>
+                                                    <td>Low</td>
+                                                    <td>Low</td>
+                                                    <td>Medium</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Strength</td>
+                                                    <td>High</td>
+                                                    <td>High</td>
+                                                    <td>Low</td>
+                                                    <td>High</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Weight (Example)</td>
+                                                    <td>Low (10 kg)</td>
+                                                    <td>High (40 kg)</td>
+                                                    <td>Medium (14 kg)</td>
+                                                    <td>Low (15 kg)</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Electrical Conductivity</td>
+                                                    <td>Low</td>
+                                                    <td>High</td>
+                                                    <td>Moderate</td>
+                                                    <td>High</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Thermal Conductivity</td>
+                                                    <td>Very Low</td>
+                                                    <td>High</td>
+                                                    <td>Low</td>
+                                                    <td>High</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <!-- Specifications Tab -->
+                                <div class="tab-pane fade" id="frp-specs" role="tabpanel">
+                                    <div class="specs-grid">
+                                        <div class="spec-item">
+                                            <h6>Material Composition</h6>
+                                            <p>Glass fibers embedded in polymer matrix</p>
+                                        </div>
+                                        <div class="spec-item">
+                                            <h6>Available Sizes</h6>
+                                            <p>6mm, 8mm, 10mm, 12mm, 16mm, 20mm</p>
+                                        </div>
+                                        <div class="spec-item">
+                                            <h6>Tensile Strength</h6>
+                                            <p>600-1000 MPa</p>
+                                        </div>
+                                        <div class="spec-item">
+                                            <h6>Density</h6>
+                                            <p>1.8-2.1 g/cm³</p>
+                                        </div>
+                                        <div class="spec-item">
+                                            <h6>Thermal Expansion</h6>
+                                            <p>6-10 x 10⁻⁶/°C</p>
+                                        </div>
+                                        <div class="spec-item">
+                                            <h6>Service Temperature</h6>
+                                            <p>-40°C to 80°C</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="mt-4">
+                                        <h6>Applications:</h6>
+                                        <ul class="feature-list">
+                                            <li>Marine structures</li>
+                                            <li>Bridge decks</li>
+                                            <li>Parking garages</li>
+                                            <li>Water treatment plants</li>
+                                            <li>Chemical plants</li>
+                                            <li>Highway barriers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Pricing Tab -->
+                                <div class="tab-pane fade" id="frp-pricing" role="tabpanel">
+                                    <h6>Pricing Information</h6>
+                                    <table class="comparison-table">
+                                        <thead>
+                                            <tr>
+                                                <th>FRP Rebar Size</th>
+                                                <th>Unit Price (INR per meter)</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr><td>6 mm</td><td>7.5</td></tr>
+                                            <tr><td>7 mm</td><td>10</td></tr>
+                                            <tr><td>8 mm</td><td>13</td></tr>
+                                            <tr><td>10 mm</td><td>20</td></tr>
+                                            <tr><td>12 mm</td><td>30</td></tr>
+                                            <tr><td>14 mm</td><td>38</td></tr>
+                                            <tr><td>16 mm</td><td>54</td></tr>
+                                        </tbody>
+                                    </table>
+                                    
+                                    <div class="mt-4">
+                                        <h6>Commercial Terms:</h6>
+                                        <ul class="feature-list">
+                                            <li>GST 18% Extra</li>
+                                            <li>Transportation Extra</li>
+                                            <li>Unloading in client's scope</li>
+                                            <li>Payment: 50% advance with PO, balance before dispatch</li>
+                                            <li>Delivery: Within 1 week after confirmed PO and advance</li>
+                                            <li>Warranty: 12 months against manufacturing defects</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Aluminium Systems Product -->
+            <div class="row g-5">
+                <div class="col-12">
+                    <div class="bg-white rounded shadow overflow-hidden product-card">
+                        <div class="position-relative">
+                            <span class="product-badge">Premium Product</span>
+                            <img src="/img/alu.webp" alt="Aluminium Systems" class="img-fluid w-100">
+                        </div>
+                        <div class="p-4 product-info">
+                            <h3>Aluminium Systems for Doors & Windows</h3>
+                            <span class="text-primary">German Standard Quality - ROHS Compliant</span>
+                            
+                            <div class="product-highlight">
+                                <p class="mb-2"><strong>Available Systems:</strong> 29mm, 37mm, 40mm, 50mm Series</p>
+                                <p class="mb-2"><strong>Quality:</strong> Confirming to German Standards</p>
+                                <p class="mb-0"><strong>Compliance:</strong> ROHS Compliant</p>
+                            </div>
+                            
+                            <p class="text-muted mt-2">Premium aluminium systems for doors and windows with sleek designs, superior durability, and excellent performance.<br> Available in various series to meet different architectural requirements.</p>
+                            
+                            <!-- Product Tabs -->
+                            <ul class="nav nav-tabs product-tabs" id="aluminium-tabs" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="aluminium-features-tab" data-bs-toggle="tab" data-bs-target="#aluminium-features" type="button" role="tab">Features</button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="aluminium-specs-tab" data-bs-toggle="tab" data-bs-target="#aluminium-specs" type="button" role="tab">Specifications</button>
+                                </li>
+                               
+                            </ul>
+                            
+                            <div class="tab-content" id="aluminium-tab-content">
+                                <!-- Features Tab -->
+                                <div class="tab-pane fade show active" id="aluminium-features" role="tabpanel">
+                                    <h5 class="mt-0">Product Range:</h5>
+                                    <ul class="feature-list">
+                                        <li>29mm Sliding Window Series</li>
+                                        <li>37mm Sliding Series</li>
+                                        <li>40mm Casement Window Systems</li>
+                                        <li>50mm Casement Door & Window Systems</li>
+                                        <li>UPVC Aluminium Track Systems</li>
+                                        <li>Solar Profiles</li>
+                                        <li>Various accessories and components</li>
+                                    </ul>
+                                    
+                                    <div class="mt-4">
+                                        <h6>Key Features:</h6>
+                                        <ul class="feature-list">
+                                            <li>German Standard Quality</li>
+                                            <li>ROHS Compliant</li>
+                                            <li>Available in multiple series (29mm, 37mm, 40mm, 50mm)</li>
+                                            <li>Comprehensive range of accessories</li>
+                                            <li>Suitable for various glass types (SGU, DGU, laminated)</li>
+                                            <li>Mosquito shutter options available</li>
+                                            <li>Multiple locking systems</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <!-- Specifications Tab -->
+                                <div class="tab-pane fade" id="aluminium-specs" role="tabpanel">
+                                    <h6 class="mt-0">Product Series Details</h6>
+                                    
+                                    <h6 class="mt-4">29mm Sliding Window Series</h6>
+                                    <p>Features flying track, 2-track light systems, and various shutter options for laminated glass.</p>
+                                    
+                                    <h6 class="mt-4">37mm Sliding Series</h6>
+                                    <p>Includes interlock systems, mosquito shutters, and specialized profiles for enhanced performance.</p>
+                                    
+                                    <h6 class="mt-4">40mm Casement Window Systems</h6>
+                                    <p>Premium casement systems with DGU clip adaptors for 28mm and 21mm glass, multiple mullion options.</p>
+                                    
+                                    <h6 class="mt-4">50mm Casement Door & Window Systems</h6>
+                                    <p>Heavy-duty systems for doors and windows with specialized shutters for inside and outside opening.</p>
+                                    
+                                    <h6 class="mt-4">UPVC Aluminium Track Systems</h6>
+                                    <p>Hybrid systems combining UPVC and aluminium for optimal performance and durability.</p>
+                                    
+                                    <h6 class="mt-4">Solar Profiles</h6>
+                                    <p>Specialized profiles for solar panel installations and renewable energy applications.</p>
+                                </div>
+                                
+                                
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Products Section End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid bg-dark text-white-50 footer pt-5">
+        <div class="container-fluid px-0">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.1s">
+                        <a href="index.html" class="d-inline-block mb-3">
+                            <h1 class="text-white">ASAN</h1>
+                            <small class="text-primary">Services Associate India</small>
+                        </a>
+                        <p class="mb-0">India's premier engineering consultancy with 35+ years of experience in delivering comprehensive engineering solutions across various sectors.</p>
+                    </div>
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.3s">
+                        <h5 class="text-white mb-4">Get In Touch</h5>
+                        <p class="mb-3"><i class="fa fa-map-marker-alt me-3 text-primary"></i>House No. 43, Ganesh Anita Vihar, Jabalpur, MP</p>
+                        <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-9300106147</p>
+                        <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-7987190070</p>
+
+                        <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanengineering.com</p>
+                        <p class="mb-0"><i class="fa fa-globe me-3 text-primary"></i>www.asanindiaservices.com</p>
+                        <div class="d-flex pt-3">
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
+                        <h5 class="text-white mb-4">Quick Links</h5>
+                        <a class="btn btn-link d-block text-start mb-2" href="index.html">Home</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="about.html">About Us</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="services.html">Services</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="contact.html">Contact Us</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="project.html">Projects</a>
+                                                <a class="btn btn-link d-block text-start mb-2" href="product.html">Products</a>
+
+                        <a class="btn btn-link d-block text-start mb-2" href="team.html">Our Team</a>
+                    </div>
+                    <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                        <h5 class="text-white mb-4">Our Services</h5>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Civil Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Electrical Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Mechanical Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">Computer Engineering</a>
+                        <a class="btn btn-link d-block text-start mb-2" href="service.html">AI & ML Solutions</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Section -->
+        <div class="container-fluid border-top border-secondary py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        <span class="text-white-50">&copy; <a class="text-white" href="index.html">ASAN Services Associate India Private Limited</a>, All Rights Reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <span class="text-white-50">35+ Years of Engineering Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+        <i class="bi bi-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/wow/wow.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Back to top button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            $(document).ready(function(){
+                $(window).scroll(function(){
+                    if ($(this).scrollTop() > 300) {
+                        $('.back-to-top').addClass('show');
+                    } else {
+                        $('.back-to-top').removeClass('show');
+                    }
+                });
+                
+                $('.back-to-top').click(function(){
+                    $('html, body').animate({scrollTop: 0}, 800);
+                    return false;
+                });
+                
+                // Expandable content functionality
+                $('.expand-btn').click(function() {
+                    const content = $(this).next('.expandable-content');
+                    content.toggleClass('expanded');
+                    $(this).toggleClass('expanded');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
