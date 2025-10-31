@@ -2063,99 +2063,136 @@ document.addEventListener('DOMContentLoaded', function() {
                                 <h4 class="fw-bold text-dark mb-1">Request Project Quote</h4>
                                 <p class="text-muted mb-0 small">We'll contact you within 2 hours</p>
                             </div>
+<!-- Inquiry Form -->
+<form class="inquiry-form" id="inquiryForm">
 
-                            <!-- Inquiry Form -->
-                            <form class="inquiry-form" id="inquiryForm">
-                                <div class="row g-2">
-                                    <!-- Name Fields -->
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">First Name *</label>
-                                            <input type="text" class="form-control" placeholder="Enter first name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">Last Name *</label>
-                                            <input type="text" class="form-control" placeholder="Enter last name" required>
-                                        </div>
-                                    </div>
+    <!-- Disable CAPTCHA -->
+    <input type="hidden" name="_captcha" value="false">
+    <!-- Email Format Better -->
+    <input type="hidden" name="_template" value="table">
 
-                                    <!-- Contact Fields -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">Email Address *</label>
-                                            <input type="email" class="form-control" placeholder="your@email.com" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">Phone Number *</label>
-                                            <input type="tel" class="form-control" placeholder="+91 1234567890" required>
-                                        </div>
-                                    </div>
+    <div class="row g-2">
 
-                                    <!-- Project Details -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">Project Type *</label>
-                                            <select class="form-select" required>
-                                                <option value="" disabled selected>Select project type</option>
-                                                <option value="industrial">Industrial Project</option>
-                                                <option value="commercial">Commercial Building</option>
-                                                <option value="residential">Residential Construction</option>
-                                                <option value="infrastructure">Infrastructure Development</option>
-                                                <option value="realestate">Real Estate Development</option>
-                                            </select>
-                                        </div>
-                                    </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">First Name *</label>
+                <input type="text" name="first_name" class="form-control" placeholder="Enter first name" required>
+            </div>
+        </div>
 
-                                    <!-- Service Interest -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">Service Required *</label>
-                                            <select class="form-select" required>
-                                                <option value="" disabled selected>Choose service category</option>
-                                                <option value="civil">Civil Engineering</option>
-                                                <option value="electrical">Electrical Engineering</option>
-                                                <option value="mechanical">Mechanical Engineering</option>
-                                                <option value="computer">Computer Engineering</option>
-                                                <option value="ai">AI & ML Solutions</option>
-                                                <option value="environmental">Environmental Engineering</option>
-                                                <option value="realestate">Real Estate Consultancy</option>
-                                            </select>
-                                        </div>
-                                    </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">Last Name *</label>
+                <input type="text" name="last_name" class="form-control" placeholder="Enter last name" required>
+            </div>
+        </div>
 
-                                    <!-- Message -->
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="form-label fw-semibold small">Project Requirements *</label>
-                                            <textarea class="form-control" rows="3" placeholder="Tell us about your project specifications, timeline, and requirements..." required></textarea>
-                                        </div>
-                                    </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">Email Address *</label>
+                <input type="email" name="email" class="form-control" placeholder="your@email.com" required>
+            </div>
+        </div>
 
-                                    <!-- Submit Button -->
-                                    <div class="col-12 mt-3">
-                                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold submit-btn">
-                                            <span class="btn-text">
-                                                <i class="fa fa-paper-plane me-2"></i>Get Project Quote
-                                            </span>
-                                            <div class="btn-loading d-none">
-                                                <div class="spinner-border spinner-border-sm me-2" role="status"></div>
-                                                Processing...
-                                            </div>
-                                        </button>
-                                    </div>
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">Phone Number *</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+91 1234567890" required>
+            </div>
+        </div>
 
-                                    <!-- Privacy Note -->
-                                    <div class="col-12 text-center mt-2">
-                                        <p class="text-muted small mb-0">
-                                            We respect your privacy. Your information is secure with us.
-                                        </p>
-                                    </div>
-                                </div>
-                            </form>
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">Project Type *</label>
+                <select class="form-select" name="project_type" required>
+                    <option value="" disabled selected>Select project type</option>
+                    <option value="Industrial Project">Industrial Project</option>
+                    <option value="Commercial Building">Commercial Building</option>
+                    <option value="Residential Construction">Residential Construction</option>
+                    <option value="Infrastructure Development">Infrastructure Development</option>
+                    <option value="Real Estate Development">Real Estate Development</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">Service Required *</label>
+                <select class="form-select" name="service_required" required>
+                    <option value="" disabled selected>Choose service category</option>
+                    <option value="Civil Engineering">Civil Engineering</option>
+                    <option value="Electrical Engineering">Electrical Engineering</option>
+                    <option value="Mechanical Engineering">Mechanical Engineering</option>
+                    <option value="Computer Engineering">Computer Engineering</option>
+                    <option value="AI & ML Solutions">AI & ML Solutions</option>
+                    <option value="Environmental Engineering">Environmental Engineering</option>
+                    <option value="Real Estate Consultancy">Real Estate Consultancy</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="form-group">
+                <label class="form-label fw-semibold small">Project Requirements *</label>
+                <textarea class="form-control" name="project_details" rows="3" placeholder="Tell us about your project specifications, timeline, and requirements..." required></textarea>
+            </div>
+        </div>
+
+        <div class="col-12 mt-3">
+            <button type="submit" class="btn btn-primary w-100 py-2 fw-bold submit-btn">
+                <span class="btn-text">
+                    <i class="fa fa-paper-plane me-2"></i>Get Project Quote
+                </span>
+                <div class="btn-loading d-none">
+                    <div class="spinner-border spinner-border-sm me-2" role="status"></div>
+                    Processing...
+                </div>
+            </button>
+        </div>
+
+        <div class="col-12 text-center mt-2">
+            <p class="text-muted small mb-0">
+                We respect your privacy. Your information is secure with us.
+            </p>
+        </div>
+
+    </div>
+</form>
+
+<!-- SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+document.getElementById("inquiryForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // stop form redirect
+    
+    const formData = new FormData(this);
+
+    fetch("https://formsubmit.co/sales@asanindiaservices.com", {
+        method: "POST",
+        body: formData
+    })
+    .then(response => {
+        Swal.fire({
+            title: "✅ Inquiry Sent Successfully!",
+            text: "We will contact you within 2 hours.",
+            icon: "success",
+            confirmButtonColor: "#3085d6"
+        });
+        this.reset();
+    })
+    .catch(error => {
+        Swal.fire({
+            title: "❌ Error!",
+            text: "Something went wrong. Please try again.",
+            icon: "error",
+            confirmButtonColor: "#d33"
+        });
+    });
+});
+</script>
+
+
                         </div>
                     </div>
                 </div>
@@ -2164,6 +2201,11 @@ document.addEventListener('DOMContentLoaded', function() {
     </div>
 </div>
 <!-- Inquiry Section End -->
+<!-- <script>
+function showSuccessMessage() {
+    alert("✅ Thank you! Your inquiry has been submitted successfully.");
+}
+</script> -->
 
 <style>
 /* Inquiry Section Styling */
@@ -2432,7 +2474,7 @@ textarea.form-control {
                     <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-9300106147</p>
                     <p class="mb-3"><i class="fa fa-phone-alt me-3 text-primary"></i>+91-7987190070</p>
 
-                    <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanengineering.com</p>
+                    <p class="mb-3"><i class="fa fa-envelope me-3 text-primary"></i>sales@asanindiaservices.com</p>
                     <p class="mb-0"><i class="fa fa-globe me-3 text-primary"></i>www.asanindiaservices.com</p>
                     <div class="d-flex pt-3">
                         <a class="btn btn-outline-primary btn-square border-2 me-2" href="#!">
